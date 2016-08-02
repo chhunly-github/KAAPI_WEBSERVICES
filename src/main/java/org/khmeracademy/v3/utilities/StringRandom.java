@@ -38,14 +38,5 @@ public class StringRandom {
 	        }
 	    }
 	     
-	    /*public static void main(String a[]){
-	    	StringRandom msr = new StringRandom	();
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	        System.out.println(msr.generateRandomString());
-	    }*/
+
 	}

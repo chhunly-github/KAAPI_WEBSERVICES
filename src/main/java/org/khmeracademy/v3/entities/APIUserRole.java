@@ -2,8 +2,6 @@ package org.khmeracademy.v3.entities;
 
 public class APIUserRole{
 
-	private static final long serialVersionUID = 1L;
-	
 	private Integer id;
 	private String name;
 	
@@ -21,8 +19,4 @@ public class APIUserRole{
 	}
 	
 	
-/*	@Override
-	public String getAuthority() {
-		return name;
-	}*/
 }
