@@ -10,7 +10,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import org.khmeracademy.v3.user.entities.SendMail;
+import org.khmeracademy.v3.entities.user.SendMail;
 
 public class SendMailTLS {
 
