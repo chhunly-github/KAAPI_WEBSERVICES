@@ -1,8 +1,5 @@
 package org.khmeracademy.v3.entities.elearning;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /*import org.kaapi.app.forms.RecommendedVideos;*/
 
 public class Playlist {
