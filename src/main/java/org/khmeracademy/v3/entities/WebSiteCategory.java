@@ -7,6 +7,8 @@ public class WebSiteCategory {
 	private int index;
 	private String createdDate;
 	private String status;
+	
+	
 	public String getId() {
 		return id;
 	}
