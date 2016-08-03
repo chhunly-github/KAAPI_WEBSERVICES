@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.controllers.rest;
+package org.khmeracademy.v3.controllers.rest.elearning;
 
 
 import org.springframework.stereotype.Controller;
