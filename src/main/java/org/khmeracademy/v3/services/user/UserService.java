@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.khmeracademy.v3.entities.user.User;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface UserService {
 
 	boolean findByid(int id);

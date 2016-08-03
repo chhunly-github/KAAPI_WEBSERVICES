@@ -13,7 +13,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
-@MapperScan({ "com.basic.authentication.api.repository" })
+@MapperScan({ "org.khmeracademy.v3.repository" })
 @PropertySource(value = { "classpath:configuration.properties" })
 public class WebConfiguration {
 	

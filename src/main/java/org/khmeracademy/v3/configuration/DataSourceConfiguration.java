@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.configuration;
+/*package org.khmeracademy.v3.configuration;
 
 
 import javax.sql.DataSource;
@@ -26,3 +26,4 @@ public class DataSourceConfiguration {
 		return new DataSourceTransactionManager(datasource);
 	}
 }
+*/
