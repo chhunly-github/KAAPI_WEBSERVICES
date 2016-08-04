@@ -6,7 +6,9 @@ import org.khmeracademy.v3.entities.user.User;
 import org.khmeracademy.v3.repository.UserRepository;
 import org.khmeracademy.v3.services.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserImpl implements UserService {
 
 	@Autowired
