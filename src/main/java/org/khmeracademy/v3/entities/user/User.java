@@ -35,13 +35,12 @@ public class User {
 	private String universityName;
 	private String departmentName;
 	private int point;
-	private boolean userStatus;
+	private int userStatus;
+	
 	private boolean isConfirmed;
 	
-	private String scFacebookId;
-	private String scTwitterId;
-	private String scGmailId;
-	private String scType;
+	private String socialId;
+	
 	
 	private int originalID;
 	
@@ -229,42 +228,27 @@ public class User {
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	public boolean isUserStatus() {
-		return userStatus;
-	}
-	public void setUserStatus(boolean userStatus) {
-		this.userStatus = userStatus;
-	}
+	
 	public boolean isConfirmed() {
 		return isConfirmed;
 	}
 	public void setConfirmed(boolean isConfirmed) {
 		this.isConfirmed = isConfirmed;
 	}
-	public String getScFacebookId() {
-		return scFacebookId;
+	public String getSocialId() {
+		return socialId;
 	}
-	public void setScFacebookId(String scFacebookId) {
-		this.scFacebookId = scFacebookId;
+	public void setSocialId(String socialId) {
+		this.socialId = socialId;
 	}
-	public String getScTwitterId() {
-		return scTwitterId;
+	public int getUserStatus() {
+		return userStatus;
 	}
-	public void setScTwitterId(String scTwitterId) {
-		this.scTwitterId = scTwitterId;
+	public void setUserStatus(int userStatus) {
+		this.userStatus = userStatus;
 	}
-	public String getScGmailId() {
-		return scGmailId;
-	}
-	public void setScGmailId(String scGmailId) {
-		this.scGmailId = scGmailId;
-	}
-	public String getScType() {
-		return scType;
-	}
-	public void setScType(String scType) {
-		this.scType = scType;
-	}
+	
+	
 	
 	
 }

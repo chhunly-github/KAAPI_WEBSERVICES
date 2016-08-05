@@ -3,26 +3,24 @@ package org.khmeracademy.v3.entities.user;
 public class UserType {
 
 	
-	private String userTypeId;
-	private String userTypeName;
+	private String usertypeid;
+	private String usertypename;
 	private boolean viewable;
 	private boolean commentable;
 	private boolean postable;
 	private boolean deleteable;
 	private boolean userable;
-	private int countUsers;
-	
-	public String getUserTypeId() {
-		return userTypeId;
+	public String getUsertypeid() {
+		return usertypeid;
 	}
-	public void setUserTypeId(String userTypeId) {
-		this.userTypeId = userTypeId;
+	public void setUsertypeid(String usertypeid) {
+		this.usertypeid = usertypeid;
 	}
-	public String getUserTypeName() {
-		return userTypeName;
+	public String getUsertypename() {
+		return usertypename;
 	}
-	public void setUserTypeName(String userTypeName) {
-		this.userTypeName = userTypeName;
+	public void setUsertypename(String usertypename) {
+		this.usertypename = usertypename;
 	}
 	public boolean isViewable() {
 		return viewable;
@@ -53,12 +51,6 @@ public class UserType {
 	}
 	public void setUserable(boolean userable) {
 		this.userable = userable;
-	}
-	public int getCountUsers() {
-		return countUsers;
-	}
-	public void setCountUsers(int countUsers) {
-		this.countUsers = countUsers;
 	}
 	
 }

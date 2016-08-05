@@ -14,12 +14,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @Configuration
 @MapperScan({ "org.khmeracademy.v3.repository" })
-@PropertySource(value = { "classpath:configuration.properties" })
+/*@PropertySource(value = { "classpath:configuration.properties" })*/
 public class WebConfiguration {
 	
-	@Autowired
-	private Environment environment;
-
+	//@Autowired
+	//private Environment environment;
+/*
 	@Bean
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -28,17 +28,20 @@ public class WebConfiguration {
 		dataSource.setUsername(environment.getProperty("MOL.dataSource.username"));
 		dataSource.setPassword(environment.getProperty("MOL.dataSource.password"));
 		return dataSource;
-	}
-
+	}*/
+	
+	@Autowired
+	DataSource dataSource;
+	
 	@Bean
 	public DataSourceTransactionManager transactionManager() {
-		return new DataSourceTransactionManager(getDataSource());
+		return new DataSourceTransactionManager(dataSource);
 	}
  
 	@Bean
 	public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-		sessionFactory.setDataSource(getDataSource());
+		sessionFactory.setDataSource(dataSource);
 		return sessionFactory;
 	}
 

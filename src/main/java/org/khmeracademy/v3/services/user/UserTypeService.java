@@ -2,28 +2,28 @@ package org.khmeracademy.v3.services.user;
 
 import java.util.ArrayList;
 
-import org.khmeracademy.v3.entities.user.User;
+
+import org.khmeracademy.v3.entities.user.UserType;
 
 
-public interface UserService {
-
-	boolean findByid(int id);
+public interface UserTypeService {
+	UserType findByid(int id);
 	/**
 	 * 
 	 * @return
 	 */
-	 User findByUserNameAndPassword( String username,String password);
+	 UserType findByUserId( int id);
 	/**
 	 * 
 	 * @return
 	 */
-	ArrayList<User> findAllUser();
+	ArrayList<UserType> findAllUserType();
 	/**
 	 * 
 	 * @param user
 	 * @return
 	 */
-	User Save(User user);
+	boolean Save(UserType usertype);
 	/**
 	 * 
 	 * @param id
@@ -35,7 +35,5 @@ public interface UserService {
 	 * @param user
 	 * @return
 	 */
-	User updateUser(User user);
-	
-	
+	boolean updateUserType(UserType usertype);
 }

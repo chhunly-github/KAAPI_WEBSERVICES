@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.configuration.security;
+/*package org.khmeracademy.v3.configuration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -34,3 +34,4 @@ public class APIConfiguration extends WebSecurityConfigurerAdapter{
 	
 	
 }
+*/
