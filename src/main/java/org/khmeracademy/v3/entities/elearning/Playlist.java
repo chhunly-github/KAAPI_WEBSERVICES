@@ -4,49 +4,52 @@ package org.khmeracademy.v3.entities.elearning;
 
 public class Playlist {
 
-	private String playlistId;
-	private String playlistName;
+	private int playlistid;
+	private String playlistname;
 	private String description;
-	private String userId;
-	private String thumbnailUrl;
-	private boolean publicView;
-	private String username;
-	private int countVideos;
-	private String videoId;
-	
-	private String maincategory;
-	private String maincategoryname;
-	private String bgImage;
-/*	private List<RecommendedVideos> videos;
-	*/
-	public String getMaincategoryname() {
-		return maincategoryname;
-	}
-	public void setMaincategoryname(String maincategoryname) {
-		this.maincategoryname = maincategoryname;
-	}
+	private int userid;
+	private String thumbnailurl;
+	private boolean publicview;
 	private String color;
 	private boolean status;
-	private String userImageUrl;
+	private int maincategory;
+	private String bgimage;
 	
-	public String getUserImageUrl() {
-		return userImageUrl;
+	public int getPlaylistid() {
+		return playlistid;
 	}
-	public void setUserImageUrl(String userImageUrl) {
-		this.userImageUrl = userImageUrl;
+	public void setPlaylistid(int playlistid) {
+		this.playlistid = playlistid;
 	}
-
-	public String getMaincategory() {
-		return maincategory;
+	public String getPlaylistname() {
+		return playlistname;
 	}
-	public void setMaincategory(String maincategory) {
-		this.maincategory = maincategory;
+	public void setPlaylistname(String playlistname) {
+		this.playlistname = playlistname;
 	}
-	public String getBgImage() {
-		return bgImage;
+	public String getDescription() {
+		return description;
 	}
-	public void setBgImage(String bgImage) {
-		this.bgImage = bgImage;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public String getThumbnailurl() {
+		return thumbnailurl;
+	}
+	public void setThumbnailurl(String thumbnailurl) {
+		this.thumbnailurl = thumbnailurl;
+	}
+	public boolean isPublicview() {
+		return publicview;
+	}
+	public void setPublicview(boolean publicview) {
+		this.publicview = publicview;
 	}
 	public String getColor() {
 		return color;
@@ -60,68 +63,17 @@ public class Playlist {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	public String getPlaylistName() {
-		return playlistName;
+	public int getMaincategory() {
+		return maincategory;
 	}
-	public void setPlaylistName(String playlistName) {
-		this.playlistName = playlistName;
+	public void setMaincategory(int maincategory) {
+		this.maincategory = maincategory;
 	}
-	public String getDescription() {
-		return description;
+	public String getBgimage() {
+		return bgimage;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setBgimage(String bgimage) {
+		this.bgimage = bgimage;
 	}
-	
-	public String getPlaylistId() {
-		return playlistId;
-	}
-	public void setPlaylistId(String playlistId) {
-		this.playlistId = playlistId;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getVideoId() {
-		return videoId;
-	}
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
-	}
-	public String getThumbnailUrl() {
-		return thumbnailUrl;
-	}
-	public void setThumbnailUrl(String thumbnailUrl) {
-		this.thumbnailUrl = thumbnailUrl;
-	}
-	public boolean isPublicView() {
-		return publicView;
-	}
-	public void setPublicView(boolean publicView) {
-		this.publicView = publicView;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public int getCountVideos() {
-		return countVideos;
-	}
-	public void setCountVideos(int countVideos) {
-		this.countVideos = countVideos;
-	}
-/*	public List<RecommendedVideos> getVideos() {
-		return videos;
-	}
-	public void setVideos(List<RecommendedVideos> videos) {
-		this.videos = videos;
-	}
-	*/
-	
+
 }

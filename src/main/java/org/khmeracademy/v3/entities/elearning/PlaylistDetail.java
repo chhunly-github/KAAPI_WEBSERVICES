@@ -2,35 +2,26 @@ package org.khmeracademy.v3.entities.elearning;
 
 public class PlaylistDetail {
 
-	private String playlistId;
-	private String videoId;
-	private String playlistName; 
-	private String videoName;
-	
-
-	public String getPlaylistId() {
-		return playlistId;
+	private int playlistid;
+	private int videoid;
+	private int index;
+	public int getPlaylistid() {
+		return playlistid;
 	}
-	public void setPlaylistId(String playlistId) {
-		this.playlistId = playlistId;
+	public void setPlaylistid(int playlistid) {
+		this.playlistid = playlistid;
 	}
-	public String getVideoId() {
-		return videoId;
+	public int getVideoid() {
+		return videoid;
 	}
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
+	public void setVideoid(int videoid) {
+		this.videoid = videoid;
 	}
-	public String getPlaylistName() {
-		return playlistName;
+	public int getIndex() {
+		return index;
 	}
-	public void setPlaylistName(String playlistName) {
-		this.playlistName = playlistName;
-	}
-	public String getVideoName() {
-		return videoName;
-	}
-	public void setVideoName(String videoName) {
-		this.videoName = videoName;
-	}
-	
+	public void setIndex(int index) {
+		this.index = index;
+	} 
+		
 }
