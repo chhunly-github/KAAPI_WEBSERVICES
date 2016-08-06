@@ -1,15 +1,24 @@
 package org.khmeracademy.v3.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UserType {
 
-	
+	@JsonProperty("USERTYPE_ID")
 	private String usertypeid;
+	@JsonProperty("USERTYPE_NAME")
 	private String usertypename;
+	@JsonProperty("VIEWABLE")
 	private boolean viewable;
+	@JsonProperty("COMMENTABLE")
 	private boolean commentable;
+	@JsonProperty("POSTABLE")
 	private boolean postable;
+	@JsonProperty("DELETABLE")
 	private boolean deleteable;
+	@JsonProperty("USERABLE")
 	private boolean userable;
+	
 	public String getUsertypeid() {
 		return usertypeid;
 	}

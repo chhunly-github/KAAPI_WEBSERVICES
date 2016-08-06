@@ -1,51 +1,65 @@
 package org.khmeracademy.v3.entities.elearning;
 
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Category {
 	
-	private String categoryId;
-	private String categoryName;
-	private String categoryLogoUrl;
-	private String mainCategoryId;
-	private String mainCategoryName;
-	private int countVideos;
+	@JsonProperty("VIDEO_CATEGORY_ID")
+	private int videocategoryid;
+	@JsonProperty("CATEGORY_NAME")
+	private String categoryname;
+	@JsonProperty("CATEGORY_LOGOURL")
+	private String categorylogourl;
+	@JsonProperty("CATEGORY_ORDER")
+	private int categoryorder;
+	@JsonProperty("BG_IMAGE")
+	private String bgimage;
+	@JsonProperty("COLOR")
+	private String color;
+	@JsonProperty("HAS_MAIN_CATEGORY")
+	private int hasmaincategoryid;
 	
-	public String getCategoryId() {
-		return categoryId;
+	public int getVideocategoryid() {
+		return videocategoryid;
 	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
+	public void setVideocategoryid(int videocategoryid) {
+		this.videocategoryid = videocategoryid;
 	}
-	public String getCategoryName() {
-		return categoryName;
+	public String getCategoryname() {
+		return categoryname;
 	}
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
-	public String getCategoryLogoUrl() {
-		return categoryLogoUrl;
+	public String getCategorylogourl() {
+		return categorylogourl;
 	}
-	public void setCategoryLogoUrl(String categoryLogoUrl) {
-		this.categoryLogoUrl = categoryLogoUrl;
+	public void setCategorylogourl(String categorylogourl) {
+		this.categorylogourl = categorylogourl;
 	}
-	public String getMainCategoryId() {
-		return mainCategoryId;
+	public int getCategoryorder() {
+		return categoryorder;
 	}
-	public void setMainCategoryId(String mainCategoryId) {
-		this.mainCategoryId = mainCategoryId;
+	public void setCategoryorder(int categoryorder) {
+		this.categoryorder = categoryorder;
 	}
-	public String getMainCategoryName() {
-		return mainCategoryName;
+	public String getBgimage() {
+		return bgimage;
 	}
-	public void setMainCategoryName(String mainCategoryName) {
-		this.mainCategoryName = mainCategoryName;
+	public void setBgimage(String bgimage) {
+		this.bgimage = bgimage;
 	}
-	public int getCountVideos() {
-		return countVideos;
+	public String getColor() {
+		return color;
 	}
-	public void setCountVideos(int countVideos) {
-		this.countVideos = countVideos;
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getHasmaincategoryid() {
+		return hasmaincategoryid;
+	}
+	public void setHasmaincategoryid(int hasmaincategoryid) {
+		this.hasmaincategoryid = hasmaincategoryid;
 	}
 	
 }

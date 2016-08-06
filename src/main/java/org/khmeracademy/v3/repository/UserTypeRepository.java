@@ -13,29 +13,26 @@ import org.springframework.stereotype.Repository;
 public interface UserTypeRepository {
 
 	
-	@Select("SELECT * FROM tblusertype WHERE usertypeid=#{id}")
+	@Select("SELECT * FROM ka_usertype WHERE usertypeid=#{id}")
 	UserType findByid(int id);
 	
-	
-	@Select("SELECT tblusertype.commentable ,"
-			+ "tblusertype.deleteable ,"
-			+ "tblusertype.postable ,"
-			+ "tblusertype.userable ,"
-			+ "tblusertype.usertypeid ,"
-			+ "tblusertype.usertypename ,"
-			+ "tblusertype.viewable "
-			+ "FROM tbluser INNER JOIN "
-			+ "tblusertype ON tblusertype.usertypeid = tbluser.usertypeid")
+	@Select("SELECT ut.commentable ,"
+			+ "ut.deleteable ,"
+			+ "ut.postable ,"
+			+ "ut.userable ,"
+			+ "ut.usertypeid ,"
+			+ "ut.usertypename ,"
+			+ "ut.viewable "
+			+ "FROM ka_user INNER JOIN "
+			+ "ka_usertype ut ON ut.usertypeid = ka_user.usertypeid")
 	public UserType findByUserId(int id);
 	
-	
-	
-	@Select("SELECT * FROM tblusertype ")
+	@Select("SELECT * FROM ka_usertype ")
 	ArrayList<UserType> findAllUserType();
 	
 	
 	
-	@Insert("INSERT INTO tblusertype(usertypeid ,"
+	@Insert("INSERT INTO ka_usertype(usertypeid ,"
 			+ "usertypename ,"
 			+ "viewable ,"
 			+ "commentable ,"
@@ -48,11 +45,11 @@ public interface UserTypeRepository {
 	
 	
 	
-	@Delete("DELETE FROM tblusertype WHERE userid=#{id}")
+	@Delete("DELETE FROM ka_usertype WHERE userid=#{id}")
 	public boolean delete(int id);
 	
 	
-	@Update("UPDATE tblusertype SET usertypename=#{usertypename},"
+	@Update("UPDATE ka_usertype SET usertypename=#{usertypename},"
 			+ "viewable=#{viewable},commentable=#{commentable},"
 			+ "postable=#{postable},deleteable=#{deleteable},userable=#{userable}")
 	public boolean updateUserType(UserType usertype);
