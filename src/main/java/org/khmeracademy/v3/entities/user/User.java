@@ -2,49 +2,79 @@ package org.khmeracademy.v3.entities.user;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * @author User
  *
  */
 public class User {
+	@JsonProperty("USER_ID")
 	private String userId;
+	@JsonProperty("EMAIL")
 	private String email;
+	@JsonProperty("PASSWORD")
 	private String password;
+	@JsonProperty("USERNAME")
 	private String username;
+	@JsonProperty("GENDER")
 	private String gender;
+	@JsonProperty("DATE_OF_BIRTH")
 	private Date dateOfBirth;
+	@JsonProperty("PHONE_NUMBER")
 	private String phoneNumber;
+	@JsonProperty("REGISTER_DATE")
 	private Date registerDate;
+	@JsonProperty("USER_IMAGE_URL")
 	private String userImageUrl;
+	@JsonProperty("USERTYPE_ID")
 	private String userTypeId;
+	@JsonProperty("USER_TYPENAME")
 	private String userTypeName;
+	@JsonProperty("COUNT_VIDEOS")
 	private int countVideos;
+	@JsonProperty("COUNT_VOTE_PLUS")
 	private int countVotePlus;
+	@JsonProperty("COUNT_VOTE_MINUS")
 	private int countVoteMinus;
+	@JsonProperty("COUNT_COMMENTS")
 	private int countComments;
+	@JsonProperty("COUNT_PLAYLISTS")
 	private int countPlaylists;
+	@JsonProperty("VIEWABLE")
 	private boolean viewable;
+	@JsonProperty("COMMENTABLE")
 	private boolean commentable;
+	@JsonProperty("POSTABLE")
 	private boolean postable;
+	@JsonProperty("DELETEABLE")
 	private boolean deleteable;
+	@JsonProperty("USERABLE")
 	private boolean userable;
+	@JsonProperty("COVER_PHOTO")
 	private String coverphoto;
 //	private String school;
+	@JsonProperty("UNIVERSITY_ID")
 	private String universityId;
+	@JsonProperty("DEPARTMENT_ID")
 	private String departmentId;
+	@JsonProperty("UNIVERSITY_NAME")
 	private String universityName;
+	@JsonProperty("DEPARTMENT_NAME")
 	private String departmentName;
+	@JsonProperty("POINT")
 	private int point;
+	@JsonProperty("USER_STATUS")
 	private int userStatus;
-	
+	@JsonProperty("IS_COMFIRMED")
 	private boolean isConfirmed;
-	
+	@JsonProperty("SOCIAL_ID")
 	private String socialId;
-	
-	
+	@JsonProperty("ORIGINAL_ID")
 	private int originalID;
-	
+	@JsonProperty("START_DATE")
 	private String startDate;
+	@JsonProperty("UNTIL_DATE")
 	private String untilDate;
 	 
 	public String getStartDate() {
