@@ -7,8 +7,7 @@ import org.khmeracademy.v3.entities.user.UserType;
 import org.khmeracademy.v3.repository.UserTypeRepository;
 import org.khmeracademy.v3.services.user.UserTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-@Service
+
 public class UserTypeImpl implements UserTypeService{
 	
 	@Autowired

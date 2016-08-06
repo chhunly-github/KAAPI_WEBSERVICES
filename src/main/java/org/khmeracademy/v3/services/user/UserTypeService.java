@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 
 import org.khmeracademy.v3.entities.user.UserType;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public interface UserTypeService {
 	UserType findByid(int id);
 	/**
@@ -17,6 +18,7 @@ public interface UserTypeService {
 	 * 
 	 * @return
 	 */
+	 
 	ArrayList<UserType> findAllUserType();
 	/**
 	 * 

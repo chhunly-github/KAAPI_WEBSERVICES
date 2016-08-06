@@ -1,34 +1,28 @@
 package org.khmeracademy.v3.entities.elearning;
 
 public class Vote {
-	private int userId;
-	private int videoId;
-	private String username;
-	private String videoName;
+	private int userid;
+	private int videoid;
+	private int votetype;
 	
-	public int getUserId() {
-		return userId;
+	public int getUserid() {
+		return userid;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
-	public int getVideoId() {
-		return videoId;
+	public int getVideoid() {
+		return videoid;
 	}
-	public void setVideoId(int videoId) {
-		this.videoId = videoId;
+	public void setVideoid(int videoid) {
+		this.videoid = videoid;
 	}
-	public String getUsername() {
-		return username;
+	public int getVotetype() {
+		return votetype;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setVotetype(int votetype) {
+		this.votetype = votetype;
 	}
-	public String getVideoName() {
-		return videoName;
-	}
-	public void setVideoName(String videoName) {
-		this.videoName = videoName;
-	}
+
 	
 }
