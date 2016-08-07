@@ -14,28 +14,28 @@ import org.springframework.stereotype.Repository;
 public interface CommentRepository {
 
 	@Select("SELECT commentid, commentdate, commenttext, videoid, userid, replycomid"
-			+ " FROM tblcomment")
+			+ " FROM ka_videocomment")
 	public ArrayList<Comment> findAllComment();
 	
 	@Select("SELECT commentid, commentdate, commenttext, userid, replycomid"
-			+ "FROM tblcomment WHERE videoid = #{videoid}")
+			+ "FROM ka_videocomment WHERE videoid = #{videoid}")
 	public ArrayList<Comment> findCommentbyVideoID(int id);
 	
 	@Select("SELECT commentid, commentdate, commenttext, videoid, replycomid"
-			+ "FROM tblcomment WHERE userid = #{userid}")
+			+ "FROM ka_videocomment WHERE userid = #{userid}")
 	public ArrayList<Comment> findCommentbyUserID(int id);	
 	
 	
 	
-	@Insert("INSERT INTO tblcomment(commenttext, videoid, userid, replycomid)"
+	@Insert("INSERT INTO ka_videocomment(commenttext, videoid, userid, replycomid)"
 			+ " VALUES = (#{commenttext}, #{videoid}, #{userid}, #{replycomid}")
 	public boolean saveComment(@Param("comment")Comment comment);
 	
 	
-	@Delete("DELETE FROM tbcomment WHERE commentid=#{id}")
+	@Delete("DELETE FROM ka_videocomment WHERE commentid=#{id}")
 	public boolean delete(@Param("id")int id);
 
-	@Update("UPDATE tblcomment SET commenttext = #{commenttext} WHERE commentid = #{commentid}")
+	@Update("UPDATE ka_videocomment SET commenttext = #{commenttext} WHERE commentid = #{commentid}")
 	public boolean updateComment(@Param("commenttext")String commenttext, @Param("commentid")int commentid);
 	
 	

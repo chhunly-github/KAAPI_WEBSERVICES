@@ -29,18 +29,44 @@ public class UserImpl implements UserService {
 	}
 
 	@Override
-	public User Save(User user) {
+	public boolean Save(User user) {
 		return userRepository.insert(user);
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return userRepository.delete(id);
+	public boolean deleteByAdmin(int id) {
+		return userRepository.deleteByAdmin(id);
 	}
 
 	@Override
-	public User updateUser(User user) {
-		return userRepository.updateUser(user);
+	public boolean updateUserInfoById(User user) {
+		return userRepository.updateUserInfoById(user);
+	}
+
+	@Override
+	public User findByUserId(int userid) {
+		return userRepository.findByUserId(userid);
+	}
+
+	@Override
+	public boolean updateUserPassword(String username, String newpassword, String oldpassword) {
+		
+		return userRepository.updateUserPassword(username, newpassword, oldpassword);
+	}
+
+	@Override
+	public boolean updateUserProfilePicture(String path, String username) {
+		return userRepository.updateUserProfilePicture(path, username);
+	}
+
+	@Override
+	public boolean updateUserInfoByUsernameAndPassword(User user) {
+		return userRepository.updateUserInfoByUsernameAndPassword(user);
+	}
+
+	@Override
+	public boolean updatePointByUsername(int point, String username) {
+		return userRepository.updateUserPointByUsername(point, username);
 	}
 	
 }

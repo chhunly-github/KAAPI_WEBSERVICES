@@ -2,71 +2,58 @@ package org.khmeracademy.v3.entities.elearning;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Comment {
 	
-	private String commentId;
-	private Date commentDate;
-	private String commentText;
-	private String videoId;
-	private String userId;
-	private String videoName;
-	private String username;
-	private String userImageUrl;
-	private String replyId;
-	
-	public String getCommentId() {
-		return commentId;
+	@JsonProperty("COMMENT_ID")
+	private String commentid;
+	@JsonProperty("COMMENT_DATE")
+	private Date commentdate;
+	@JsonProperty("COMMENT_TEXT")
+	private String commenttext;
+	@JsonProperty("VIDEO_ID")
+	private String videoid;
+	@JsonProperty("USER_ID")
+	private String userid;
+	@JsonProperty("REPLY_ID")
+	private String replycomid;
+	public String getCommentid() {
+		return commentid;
 	}
-	public void setCommentId(String commentId) {
-		this.commentId = commentId;
+	public void setCommentid(String commentid) {
+		this.commentid = commentid;
 	}
-	public Date getCommentDate() {
-		return commentDate;
+	public Date getCommentdate() {
+		return commentdate;
 	}
-	public void setCommentDate(Date commentDate) {
-		this.commentDate = commentDate;
+	public void setCommentdate(Date commentdate) {
+		this.commentdate = commentdate;
 	}
-	public String getCommentText() {
-		return commentText;
+	public String getCommenttext() {
+		return commenttext;
 	}
-	public void setCommentText(String commentText) {
-		this.commentText = commentText;
+	public void setCommenttext(String commenttext) {
+		this.commenttext = commenttext;
 	}
-	public String getVideoId() {
-		return videoId;
+	public String getVideoid() {
+		return videoid;
 	}
-	public void setVideoId(String videoId) {
-		this.videoId = videoId;
+	public void setVideoid(String videoid) {
+		this.videoid = videoid;
 	}
-	public String getUserId() {
-		return userId;
+	public String getUserid() {
+		return userid;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
-	public String getVideoName() {
-		return videoName;
+	public String getReplycomid() {
+		return replycomid;
 	}
-	public void setVideoName(String videoName) {
-		this.videoName = videoName;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getUserImageUrl() {
-		return userImageUrl;
-	}
-	public void setUserImageUrl(String userImageUrl) {
-		this.userImageUrl = userImageUrl;
-	}
-	public String getReplyId() {
-		return replyId;
-	}
-	public void setReplyId(String replyId) {
-		this.replyId = replyId;
+	public void setReplycomid(String replycomid) {
+		this.replycomid = replycomid;
 	}
 	
+
 }

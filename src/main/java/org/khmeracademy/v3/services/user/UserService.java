@@ -12,30 +12,40 @@ public interface UserService {
 	 * 
 	 * @return
 	 */
-	 User findByUserNameAndPassword( String username,String password);
+	 User findByUserNameAndPassword(String username,String password);
+	 /**
+	  * 
+	  * @param userid
+	  * @return
+	  */
+	 User findByUserId(int userid);
 	/**
 	 * 
 	 * @return
 	 */
+	 
 	ArrayList<User> findAllUser();
 	/**
 	 * 
 	 * @param user
 	 * @return
 	 */
-	User Save(User user);
+	boolean Save(User user);
 	/**
 	 * 
 	 * @param id
 	 * @return
 	 */
-	boolean delete(int id);
+	boolean deleteByAdmin(int id);
 	/**
 	 * 
 	 * @param user
 	 * @return
 	 */
-	User updateUser(User user);
 	
-	
+	boolean updateUserInfoById(User user);
+	boolean updateUserProfilePicture(String path, String username);
+	boolean updateUserInfoByUsernameAndPassword(User user);
+	boolean updateUserPassword(String username, String newpassword, String oldpassword);
+	boolean updatePointByUsername(int point, String username);
 }

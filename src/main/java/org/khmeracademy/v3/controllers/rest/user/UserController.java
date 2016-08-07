@@ -33,7 +33,7 @@ public class UserController {
 	
 	@RequestMapping(value="/{id}", method= RequestMethod.DELETE )
 	public ResponseEntity<Map<String,Object>> deleteUser(@PathVariable("id") int id){
-		userService.delete(id);
+		userService.deleteByAdmin(id);
 		Map<String, Object> map = new HashMap<>();
 		map.put("STATUS", true);
 		map.put("MESSAGE", "success");

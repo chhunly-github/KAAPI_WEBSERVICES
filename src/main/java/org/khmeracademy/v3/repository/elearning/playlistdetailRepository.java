@@ -7,8 +7,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface playlistdetailRepository {
 
-	@Select("SELECT tblplaylistdetail.videoid ,tblplaylistdetail.playlistid ,"
-			+ "tblplaylistdetail.index FROM tblplaylist INNER JOIN tblplaylistdetail"
-					+ "ON tblplaylistdetail.playlistid = tblplaylist.playlistid")
+	@Select("SELECT "
+			+ "pld.videoid, "
+			+ "pld.playlistid ,"
+			+ "pld.index "
+			+ "FROM ka_playlist pl "
+			+ "INNER JOIN ka_playlistdetail pld"
+			+ "ON pld.playlistid = pl.playlistid")
 	public PlaylistDetail getByplaylistId(int id);
 }
