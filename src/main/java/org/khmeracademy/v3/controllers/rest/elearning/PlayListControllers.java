@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.khmeracademy.v3.services.elearning.playlistService;
+import org.khmeracademy.v3.services.impl.findAllVideoByPlaylistidImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,37 +16,47 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/elearning/playlist/")
 public class PlayListControllers {
-	
 
-	
 	@Autowired
 	private playlistService playlistservice;
 
-	@RequestMapping(value="/playlist_findByid/{id}",method=RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> getById(@PathVariable("id") int id){
+	@RequestMapping(value = "/playlist_findByid/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> getById(@PathVariable("id") int id) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("DATA",playlistservice.getById(id));
+		map.put("DATA", playlistservice.getById(id));
 		map.put("STATUS", true);
 		map.put("MESSAGE", "SUCCESS");
-		return new  ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
-	
-	@RequestMapping(value="/playlist_getAll",method=RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> getAll(){
+
+	@RequestMapping(value = "/playlist_getAll", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> getAll() {
 		Map<String, Object> map = new HashMap<>();
-		map.put("DATA",playlistservice.getAll());
+		map.put("DATA", playlistservice.getAll());
 		map.put("STATUS", true);
 		map.put("MESSAGE", "SUCCESS");
-		return new  ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
-	
-	
-	@RequestMapping(value="/playlist_delete/{id}",method=RequestMethod.DELETE)
-	public ResponseEntity<Map<String, Object>> deleteById(@PathVariable("id") int id){
+
+	@RequestMapping(value = "/playlist_delete/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Map<String, Object>> deleteById(@PathVariable("id") int id) {
 		Map<String, Object> map = new HashMap<>();
 		playlistservice.deletePlaylistId(id);
 		map.put("STATUS", true);
 		map.put("MESSAGE", "SUCCESS");
-		return new  ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
+
+	@Autowired
+	private findAllVideoByPlaylistidImpl findAllVideoByPlayListid;
+
+	@RequestMapping(value = "/findAllVideoBy_playlistID", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> findAllVideoByPlayListID(@PathVariable("id") int id) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("DATA", findAllVideoByPlayListid.findAllVideoByPlayListId(id));
+		map.put("STATUS", true);
+		map.put("MESSAGE", "SUCCESS");
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+	}
+
 }
