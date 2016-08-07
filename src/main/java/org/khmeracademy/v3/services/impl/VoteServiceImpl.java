@@ -3,10 +3,12 @@ package org.khmeracademy.v3.services.impl;
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Vote;
-import org.khmeracademy.v3.repository.VoteRepository;
-import org.khmeracademy.v3.services.VoteService;
+import org.khmeracademy.v3.repository.elearning.VoteRepository;
+import org.khmeracademy.v3.services.elearning.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class VoteServiceImpl implements VoteService{
 
 	@Autowired

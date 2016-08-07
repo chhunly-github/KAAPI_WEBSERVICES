@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.repository;
+package org.khmeracademy.v3.repository.user;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

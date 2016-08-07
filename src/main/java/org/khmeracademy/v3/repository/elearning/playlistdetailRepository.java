@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.repository;
+package org.khmeracademy.v3.repository.elearning;
 
 import org.apache.ibatis.annotations.Select;
 import org.khmeracademy.v3.entities.elearning.PlaylistDetail;

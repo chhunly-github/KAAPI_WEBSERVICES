@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.services.Elearning;
+package org.khmeracademy.v3.services.elearning;
 
 import java.util.ArrayList;
 

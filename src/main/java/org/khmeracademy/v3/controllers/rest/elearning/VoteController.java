@@ -3,7 +3,7 @@ package org.khmeracademy.v3.controllers.rest.elearning;
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Vote;
-import org.khmeracademy.v3.services.VoteService;
+import org.khmeracademy.v3.services.elearning.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

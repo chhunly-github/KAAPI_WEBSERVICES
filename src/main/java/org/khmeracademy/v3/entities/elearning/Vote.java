@@ -1,8 +1,13 @@
 package org.khmeracademy.v3.entities.elearning;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Vote {
+	@JsonProperty("USER_ID")
 	private int userid;
+	@JsonProperty("VIDEO_ID")
 	private int videoid;
+	@JsonProperty("VIDEO_TYPE")
 	private int votetype;
 	
 	public int getUserid() {

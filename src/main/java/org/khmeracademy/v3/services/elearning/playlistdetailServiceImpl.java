@@ -1,8 +1,7 @@
-package org.khmeracademy.v3.servicesImplement.Elearning;
+package org.khmeracademy.v3.services.elearning;
 
 import org.khmeracademy.v3.entities.elearning.PlaylistDetail;
-import org.khmeracademy.v3.repository.playlistdetailRepository;
-import org.khmeracademy.v3.services.Elearning.playlistdetailService;
+import org.khmeracademy.v3.repository.elearning.playlistdetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

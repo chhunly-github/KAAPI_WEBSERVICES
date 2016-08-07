@@ -1,11 +1,9 @@
-package org.khmeracademy.v3.services;
+package org.khmeracademy.v3.services.elearning;
 
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Comment;
-import org.springframework.stereotype.Service;
 
-@Service
 public interface CommentService {
 	
 	ArrayList<Comment> findAllComment();

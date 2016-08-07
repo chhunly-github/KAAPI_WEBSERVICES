@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.services;
+package org.khmeracademy.v3.services.user;
 
 import org.khmeracademy.v3.entities.user.CoverPhoto;
 import org.springframework.stereotype.Service;

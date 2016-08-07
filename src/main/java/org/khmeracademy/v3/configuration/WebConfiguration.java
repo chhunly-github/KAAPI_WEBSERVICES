@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
-@MapperScan({ "org.khmeracademy.v3" })
+@MapperScan({ "org.khmeracademy.v3.repository" })
 public class WebConfiguration {
 	
 	

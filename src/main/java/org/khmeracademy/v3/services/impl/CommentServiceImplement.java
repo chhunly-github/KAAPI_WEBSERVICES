@@ -3,10 +3,12 @@ package org.khmeracademy.v3.services.impl;
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Comment;
-import org.khmeracademy.v3.repository.CommentRepository;
-import org.khmeracademy.v3.services.CommentService;
+import org.khmeracademy.v3.repository.elearning.CommentRepository;
+import org.khmeracademy.v3.services.elearning.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentServiceImplement implements CommentService{
 
 	@Autowired

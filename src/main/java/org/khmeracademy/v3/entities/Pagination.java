@@ -20,6 +20,7 @@ public class Pagination implements Serializable{
 		this.totalCount = totalCount;
 		this.totalPages = totalPages;
 	}
+	
 	public int getPage() {
 		return page;
 	}

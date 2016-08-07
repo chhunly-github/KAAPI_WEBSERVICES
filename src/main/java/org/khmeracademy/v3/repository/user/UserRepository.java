@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.repository;
+package org.khmeracademy.v3.repository.user;
 
 import java.util.ArrayList;
 

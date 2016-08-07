@@ -1,11 +1,9 @@
-package org.khmeracademy.v3.services.Elearning;
+package org.khmeracademy.v3.services.elearning;
 
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Category;
-import org.springframework.stereotype.Service;
 
-@Service
 public interface CategoryService {
 	
 	ArrayList<Category> findAllMainCategory();

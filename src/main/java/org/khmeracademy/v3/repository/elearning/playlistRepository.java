@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.repository;
+package org.khmeracademy.v3.repository.elearning;
 
 import java.util.ArrayList;
 
@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface playlistRepository {
 
-	@Select("SELECT * FROM tblplaylist WHERE playlistid=#{id}")
+	@Select("SELECT * FROM ka_playlist WHERE playlistid=#{id}")
 	public Playlist getById(int id);
 	
 	
-	@Select("SELECT * FROM tblplaylist")
+	@Select("SELECT * FROM ka_playlist")
 	public ArrayList<Playlist> getAll();
 	
-	@Delete("DELETE FROM tblplaylist WHERE playlistid=#{id}")
+	@Delete("DELETE FROM ka_playlist WHERE playlistid=#{id}")
 	public boolean delete(int id);
 	
 }

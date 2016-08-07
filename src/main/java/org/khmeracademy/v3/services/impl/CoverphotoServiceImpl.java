@@ -1,10 +1,12 @@
 package org.khmeracademy.v3.services.impl;
 
 import org.khmeracademy.v3.entities.user.CoverPhoto;
-import org.khmeracademy.v3.repository.CoverphotoRepository;
-import org.khmeracademy.v3.services.CoverphotoService;
+import org.khmeracademy.v3.repository.user.CoverphotoRepository;
+import org.khmeracademy.v3.services.user.CoverphotoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CoverphotoServiceImpl implements CoverphotoService{
 
 	@Autowired
