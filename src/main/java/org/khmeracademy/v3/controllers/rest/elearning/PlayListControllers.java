@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.khmeracademy.v3.services.elearning.playlistService;
-import org.khmeracademy.v3.services.elearning.playlistdetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,17 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/elearning/playlist/")
 public class PlayListControllers {
 	
-	@Autowired
-	private playlistdetailService playlistdetailService;
-	
-		
-	@RequestMapping( value="/playlistdetail/{id}",method = RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> getByPlaylistId(@PathVariable("id") int id){
-		Map<String, Object> map = new HashMap<>();
-		map.put("DATA", playlistdetailService.getByplaylistId(id));
-		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
-				
-	}
 
 	
 	@Autowired
