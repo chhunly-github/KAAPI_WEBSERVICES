@@ -7,9 +7,29 @@ import org.khmeracademy.v3.entities.elearning.Category;
 public interface CategoryService {
 	
 	ArrayList<Category> findAllMainCategory();
-	ArrayList<Category> findSubCategoryByMainCategoryId(int mainid);
+	/**
+	 * 
+	 * @param mainid
+	 * @return
+	 */
+	/*ArrayList<Category> findSubCategoryByMainCategoryId(int mainid);*/
+	/**
+	 * 
+	 * @param catid
+	 * @return
+	 */
 	boolean deleteCategoryById(int catid);
+	/**
+	 * 
+	 * @param category
+	 * @return
+	 */
 	boolean saveNewCategory(Category category);
+	/**
+	 * 
+	 * @param category
+	 * @return
+	 */
 	boolean updateCategory(Category category);
 	
 }
