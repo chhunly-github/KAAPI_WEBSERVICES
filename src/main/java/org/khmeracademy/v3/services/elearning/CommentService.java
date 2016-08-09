@@ -4,17 +4,18 @@ import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Comment;
 
+
 public interface CommentService {
 	
-	ArrayList<Comment> findAllComment();
+	ArrayList<Comment> findMainCommentByVideoId(int videoId);
 	
-	ArrayList<Comment> findCommentbyVideoID(int id);
+	ArrayList<Comment> findSubComment(int commentId);
 	
-	ArrayList<Comment> findCommentbyUserID(int id);
+	ArrayList<Comment> findCommentbyUserID(int userId);
 	
 	boolean saveComment(Comment comment);
 	
-	boolean delete(int id);
+	boolean delete(int commentId);
 	
 	boolean updateComment(String commenttext, int commentid);
 
