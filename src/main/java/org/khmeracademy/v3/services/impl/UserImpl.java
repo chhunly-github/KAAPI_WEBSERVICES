@@ -30,7 +30,7 @@ public class UserImpl implements UserService {
 	}
 
 	@Override
-	public boolean deleteByAdmin(int id) {
+	public boolean deleteUserByUserId(int id) {
 		return userRepository.deleteByAdmin(id);
 	}
 

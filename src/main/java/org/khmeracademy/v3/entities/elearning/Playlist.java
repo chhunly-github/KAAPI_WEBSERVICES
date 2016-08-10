@@ -1,19 +1,34 @@
 package org.khmeracademy.v3.entities.elearning;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /*import org.kaapi.app.forms.RecommendedVideos;*/
 
 public class Playlist {
 
+	@JsonProperty("PLAY_LISTEID")
 	private int playlistid;
+	@JsonProperty("PLAY_LISTNAME")
 	private String playlistname;
+	@JsonProperty("DESCRIPTION")
 	private String description;
+	@JsonProperty("USER_ID")
 	private int userid;
+	@JsonProperty("THUMBNAIL_URL")
 	private String thumbnailurl;
+	@JsonProperty("PUBLIC_VIEW")
 	private boolean publicview;
-	private String color;
-	private boolean status;
+	@JsonProperty("MAIN_CATEGORY")
 	private int maincategory;
+	@JsonProperty("BG_IMAGE")
 	private String bgimage;
+	@JsonProperty("COLOR")
+	private String color;
+	@JsonProperty("STATUS")
+	private boolean status;
+	@JsonProperty("DURATION")
+	private double duration;
+	
 	
 	public int getPlaylistid() {
 		return playlistid;
@@ -51,18 +66,6 @@ public class Playlist {
 	public void setPublicview(boolean publicview) {
 		this.publicview = publicview;
 	}
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
-	public boolean isStatus() {
-		return status;
-	}
-	public void setStatus(boolean status) {
-		this.status = status;
-	}
 	public int getMaincategory() {
 		return maincategory;
 	}
@@ -75,5 +78,25 @@ public class Playlist {
 	public void setBgimage(String bgimage) {
 		this.bgimage = bgimage;
 	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public double getDuration() {
+		return duration;
+	}
+	public void setDuration(double duration) {
+		this.duration = duration;
+	}
+	
+
 
 }
