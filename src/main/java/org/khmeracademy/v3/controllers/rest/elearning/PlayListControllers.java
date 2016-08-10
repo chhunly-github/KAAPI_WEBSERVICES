@@ -50,7 +50,7 @@ public class PlayListControllers {
 	@Autowired
 	private findAllVideoByPlaylistidImpl findAllVideoByPlayListid;
 
-	@RequestMapping(value = "/findAllVideoBy_playlistID", method = RequestMethod.GET)
+	@RequestMapping(value = "/findAllVideoBy_playlistID/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> findAllVideoByPlayListID(@PathVariable("id") int id) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("DATA", findAllVideoByPlayListid.findAllVideoByPlayListId(id));

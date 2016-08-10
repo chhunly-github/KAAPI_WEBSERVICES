@@ -13,8 +13,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository {
 
-	@Select("SELECT * FROM ka_log WHERE logid=#{id}")
-	boolean findByid(int id);
+
 
 	@Select("SELECT userid, " 
 			+ "email, " 
@@ -29,7 +28,7 @@ public interface UserRepository {
 			+ "universityid, "
 			+ "departmentid  "
 			+ "FROM ka_user "
-			+ "WHERE username=#{username} AND password=#{password} AND status=1")
+			+ "WHERE username=#{username} AND password=#{password} AND userstatus=1")
 	User findByUserNameAndPassword(@Param("username") String username, @Param("password") String password);
 
 	@Select("SELECT userid, "
@@ -45,7 +44,7 @@ public interface UserRepository {
 			+ "universityid, "
 			+ "departmentid  "
 			+ "FROM ka_user "
-			+ "WHERE userid=#{userid} AND status=1")
+			+ "WHERE userid=#{userid} AND userstatus=1")
 	public User findByUserId(@Param("userid") int userid);
 	
 	@Select("SELECT "
@@ -60,9 +59,8 @@ public interface UserRepository {
 			+ "usertypeid, "
 			+ "point, "
 			+ "universityid, "
-			+"departmentid, "
-			+ "userstatus "
-			+ " FROM ka_user ")
+			+"departmentid "
+			+ " FROM ka_user WHERE userstatus=1")
 	ArrayList<User> findAllUser();
 	
 	@Insert("INSERT INTO ka_user("
@@ -96,7 +94,7 @@ public interface UserRepository {
 	boolean insert(User user);
 
 	@Delete("DELETE FROM ka_user WHERE userid=#{id}")
-	boolean deleteByAdmin(int id);
+	boolean deleteByAdmin(@Param("id")int id);
 	
 	@Delete("DELETE FROM ka_user "
 			+ "WHERE username=#{username} AND password=#{password}")

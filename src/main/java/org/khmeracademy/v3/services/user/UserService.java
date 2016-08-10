@@ -7,7 +7,6 @@ import org.khmeracademy.v3.entities.user.User;
 
 public interface UserService {
 
-	boolean findByid(int id);
 	/**
 	 * 
 	 * @return

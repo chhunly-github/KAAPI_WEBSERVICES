@@ -13,10 +13,6 @@ public class UserImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;
-	@Override
-	public boolean findByid(int id) {
-		return userRepository.findByid(id);
-	}
 
 	@Override
 	public User findByUserNameAndPassword(String username, String password) {
