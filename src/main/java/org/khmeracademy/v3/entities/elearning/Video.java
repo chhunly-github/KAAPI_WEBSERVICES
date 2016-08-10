@@ -2,25 +2,43 @@ package org.khmeracademy.v3.entities.elearning;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Video {
 
+	@JsonProperty("VIDEO_ID")
 	private String videoId;
+	@JsonProperty("VIDEO_NAME")
 	private String videoName;
+	@JsonProperty("DESCRIPTION")
 	private String description;
+	@JsonProperty("YOUTUBE_URL")
 	private String youtubeUrl;
+	@JsonProperty("FILE_URL")
 	private String fileUrl;
+	@JsonProperty("PUBLIC_VIEW")
 	private boolean publicView;
+	@JsonProperty("POST_DATE")
 	private Date postDate;
+	@JsonProperty("USER_ID")
 	private String userId;
+	@JsonProperty("USERNAME")
 	private String username;
+	@JsonProperty("CATEGORY_NAME")
 	private String categoryName;	//e.g. "Java, Jsp, J2EE, " it's multiple concated string
+	@JsonProperty("COUNT_VOTE_PLUS")
 	private int countVotePlus;
+	@JsonProperty("COUNT_VOTE_MINUS")
 	private int countVoteMinus;
+	@JsonProperty("COUNT_COMMENTS")
 	private int countComments;
+	@JsonProperty("VIEW_COUNTS")
 	private int viewCounts;
+	@JsonProperty("USER_IMAGE_URL")
 	private String userImageUrl;
+	@JsonProperty("STATUS")
 	private boolean status;
-	private String []categoryId;
+	/*private String []categoryId;*/
 	
 	public String getVideoId() {
 		return videoId;
@@ -118,11 +136,11 @@ public class Video {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	public String[] getCategoryId() {
+/*	public String[] getCategoryId() {
 		return categoryId;
 	}
 	public void setCategoryId(String[] categoryId) {
 		this.categoryId = categoryId;
-	}
+	}*/
 	
 }
