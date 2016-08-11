@@ -45,5 +45,18 @@ public class PlayListControllers {
 		map.put("MESSAGE", "SUCCESS");
 		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
-
+	@RequestMapping(value = "/findAllVideoBy_playlistID/{id}", method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> findAllVideoByPlayListID(@PathVariable("id") int id) {
+		Map<String, Object> map = new HashMap<>();
+		try{
+			map.put("DATA", playlistservice.findAllVideoByPlaylistid(id));
+			map.put("STATUS", true);
+			map.put("MESSAGE", "SUCCESS");
+		}catch (Exception e) {
+			map.put("STATUS", false);
+			e.printStackTrace();
+		}
+		
+		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
+	}
 }
