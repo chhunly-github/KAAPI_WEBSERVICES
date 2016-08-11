@@ -3,7 +3,7 @@ package org.khmeracademy.v3.controllers.rest.user;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.khmeracademy.v3.services.elearning.playlistService;
+import org.khmeracademy.v3.services.user.UserPlayListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserPlayListController {
 
 	@Autowired
-	private playlistService playlistservice;
+	private UserPlayListService userplaylist;
 
-	@RequestMapping(value = "/playlist_findByid/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/playlist_findByUserId/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> findPlaylistByUserId(@PathVariable("id") int id) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("DATA", playlistservice.getById(id));
+		map.put("DATA", userplaylist.findPlaylistByUserId(id));
 		map.put("STATUS", true);
 		map.put("MESSAGE", "SUCCESS");
 		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);

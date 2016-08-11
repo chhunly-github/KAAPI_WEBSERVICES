@@ -43,4 +43,10 @@ public class CommentServiceImplement implements org.khmeracademy.v3.services.ele
 		return comment.updateComment(commenttext, commentid);
 	}
 
+	@Override
+	public ArrayList<Comment> findAllComment() {
+
+		return comment.findAllComment();
+	}
+
 }

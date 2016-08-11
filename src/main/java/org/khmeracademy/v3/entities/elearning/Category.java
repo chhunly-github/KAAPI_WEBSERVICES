@@ -1,5 +1,7 @@
 package org.khmeracademy.v3.entities.elearning;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Category {
@@ -18,6 +20,9 @@ public class Category {
 	private String color;
 	@JsonProperty("HAS_MAIN_CATEGORY")
 	private int hasmaincategoryid;
+	
+	List<Category> subCategory;
+	List<Category> subOfSubCategory;
 	
 	public int getVideocategoryid() {
 		return videocategoryid;
@@ -60,6 +65,18 @@ public class Category {
 	}
 	public void setHasmaincategoryid(int hasmaincategoryid) {
 		this.hasmaincategoryid = hasmaincategoryid;
+	}
+	public List<Category> getSubCategory() {
+		return subCategory;
+	}
+	public void setSubCategory(List<Category> subCategory) {
+		this.subCategory = subCategory;
+	}
+	public List<Category> getSubOfSubCategory() {
+		return subOfSubCategory;
+	}
+	public void setSubOfSubCategory(List<Category> subOfSubCategory) {
+		this.subOfSubCategory = subOfSubCategory;
 	}
 	
 }
