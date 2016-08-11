@@ -1,6 +1,5 @@
 package org.khmeracademy.v3.controllers.rest.elearning;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -73,6 +72,15 @@ public class CommentController {
 		Map<String, Object> map= new HashMap<>();
 		map.put("DATA", cmt.updateComment(commenttext, commentid));
 		map.put("MESSAGE", "SUCCESSFULLY DELETED DATA!");
+		map.put("CODE", "200");
+		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
+	};
+	
+	@RequestMapping(method=RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> findAllComment(){
+		Map<String, Object> map= new HashMap<>();
+		map.put("DATA", cmt.findAllComment());
+		map.put("MESSAGE", "SUCCESSFULLY GET DATA!");
 		map.put("CODE", "200");
 		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
 	};

@@ -34,6 +34,24 @@ public interface CommentRepository {
 	public ArrayList<Comment> findMainCommentByVideoId(int videoId);
 	
 	
+	@Select("SELECT com.commentid, com.commentdate, com.commenttext, com.videoid, com.userid, vid.videoname, usr.username, usr.userimageurl, com.replycomid "
+			+ "FROM ka_videocomment com "
+			+ "INNER JOIN ka_video vid on com.videoid = vid.videoid "
+			+ "INNER JOIN ka_user usr on com.userid = usr.userid "
+			+ "ORDER BY com.commentdate")
+	@Results({
+		@Result(property="commentId", column="commentid"),
+		@Result(property="commentDate", column="commentdate"),
+		@Result(property="commentText", column="commenttext"),
+		@Result(property="videoId", column="videoid"),
+		@Result(property="userId", column="userid"),
+		@Result(property="videoName", column="videoname"),
+		@Result(property="username", column="username"),
+		@Result(property="userImageUrl", column="userimageurl"),
+		@Result(property="replyId", column="replycomid")
+	})
+	public ArrayList<Comment> findAllComment();
+	
 	
 	@Select("SELECT com.commentid, com.commentdate, com.commenttext, com.videoid, com.userid, vid.videoname, usr.username, usr.userimageurl, com.replycomid "
 			+ "FROM ka_videocomment com "

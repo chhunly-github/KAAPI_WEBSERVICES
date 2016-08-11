@@ -3,7 +3,10 @@ package org.khmeracademy.v3.repository.elearning;
 import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.khmeracademy.v3.entities.elearning.Category;
@@ -19,7 +22,11 @@ public interface CategoryRepository {
 			+ "bgimage ,"
 			+ "color ,"
 			+ "hasmaincategoryid FROM ka_allvideocategory  "
-			+ "WHERE status ='t'")
+			+ "WHERE status ='t' and hasmaincategoryid is null ORDER BY categoryorder")
+	@Results(value={
+			@Result(property="subCategory" , column="videocategoryid" , 
+					many = @Many(select = "findAllSubCategory")),
+	})
 	ArrayList<Category> findAllMainCategory();
 	
 	@Select("SELECT videocategoryid ,"
@@ -29,8 +36,23 @@ public interface CategoryRepository {
 			+ "bgimage ,"
 			+ "color "
 			+ " FROM ka_allvideocategory "
-			+ "WHERE status ='t' AND hasmaincategory=#{mainid}")
-	ArrayList<Category> findAllSubCategory(@Param("mainid") int mainid);
+			+ "WHERE status ='t' AND hasmaincategoryid=#{videocategoryid} ORDER BY categoryname")
+	@Results(value={
+			@Result(property="subOfSubCategory" , column="videocategoryid" , 
+					many = @Many(select = "findAllSubCategory"))
+	})
+	ArrayList<Category> findAllSubCategory(@Param("videocategoryid") int videocategoryid);
+	
+	/*@Select("SELECT videocategoryid ,"
+			+ "categoryname ,"
+			+ "categorylogourl ,"
+			+ "categoryorder ,"
+			+ "bgimage ,"
+			+ "color "
+			+ " FROM ka_allvideocategory "
+			+ "WHERE status ='t' AND hasmaincategoryid=#{videocategoryid}")
+	ArrayList<Category> findAllSubOfSubCategory(@Param("videocategoryid") int videocategoryid);
+	*/
 	
 	@Insert("INSERT INTO ka_allvideocategory("
 			+ "videocategoryid ,"

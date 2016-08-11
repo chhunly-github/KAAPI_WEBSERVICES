@@ -19,6 +19,6 @@ public interface CommentService {
 	
 	boolean updateComment(String commenttext, int commentid);
 
-	
+	ArrayList<Comment> findAllComment();
 	
 }
