@@ -3,7 +3,7 @@ package org.khmeracademy.v3.controllers.rest.user;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.khmeracademy.v3.services.impl.findVideoInSavedListByPlaylistIdImpl;
+import org.khmeracademy.v3.services.impl.SavedlistServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,18 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/findVideoInSavedListByPlaylistId/findByID")
-public class findVideoInSavedListByPlaylistIdController {
+@RequestMapping("/savedlist/deletebySavedlistId")
+public class SavedListController {
 
 	@Autowired
-	private findVideoInSavedListByPlaylistIdImpl findVideoByid;
+	private SavedlistServiceImpl deleteBySavedListID;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> findVideoInSavedListByPlaylistId(@PathVariable("id") int playlistid) {
+	@RequestMapping(value="/delete/{savedlistid}",method = RequestMethod.DELETE)
+	public ResponseEntity<Map<String, Object>> deleteByID(@PathVariable("savedlistid") int id) {
 		Map<String, Object> map = new HashMap<>();
-		map.put("DATA", findVideoByid.findVideoinSavedListByPlaylistId(playlistid));
-		map.put("STATUS",true);
-		map.put("MESSAGE","success");
+		deleteBySavedListID.deleteSavedList(id);
+		map.put("STATUS", true);
+		map.put("MESSAGE", "success");
 		return new ResponseEntity<Map<String, Object>>(map, HttpStatus.OK);
 	}
+
 }

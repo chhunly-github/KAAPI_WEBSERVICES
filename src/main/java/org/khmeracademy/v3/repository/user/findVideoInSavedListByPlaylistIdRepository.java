@@ -16,6 +16,6 @@ public interface findVideoInSavedListByPlaylistIdRepository {
 			+ "postdate ,"
 			+ "userid ,"
 			+ "viewcount ,"
-			+ "status WHERE playlistid=#{id}")
-	public Video findVideoinSavedListByPlaylistId(@Param("id")int id);
+			+ "status FROM ka_video WHERE playlistid=#{playlistid}")
+	public Video findVideoinSavedListByPlaylistId(@Param("playlistid")int playlistid);
 }

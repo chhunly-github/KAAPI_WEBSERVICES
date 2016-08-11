@@ -12,12 +12,6 @@ public interface CategoryService {
 	 * @param mainid
 	 * @return
 	 */
-	/*ArrayList<Category> findSubCategoryByMainCategoryId(int mainid);*/
-	/**
-	 * 
-	 * @param catid
-	 * @return
-	 */
 	boolean deleteCategoryById(int catid);
 	/**
 	 * 
@@ -31,5 +25,10 @@ public interface CategoryService {
 	 * @return
 	 */
 	boolean updateCategory(Category category);
-	
+	/**
+	 * 
+	 * @param mainid
+	 * @return
+	 */
+	ArrayList<Category> findAllSubCategory(int mainid);
 }

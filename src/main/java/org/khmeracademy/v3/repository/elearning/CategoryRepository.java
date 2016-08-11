@@ -10,9 +10,8 @@ import org.khmeracademy.v3.entities.elearning.Category;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MainCategoryRepository {
+public interface CategoryRepository {
 	  
-	
 	@Select("SELECT videocategoryid ,"
 			+ "categoryname ,"
 			+ "categorylogourl ,"
@@ -21,8 +20,17 @@ public interface MainCategoryRepository {
 			+ "color ,"
 			+ "hasmaincategoryid FROM ka_allvideocategory  "
 			+ "WHERE status ='t'")
-	public ArrayList<Category> findAllMainCategory();
+	ArrayList<Category> findAllMainCategory();
 	
+	@Select("SELECT videocategoryid ,"
+			+ "categoryname ,"
+			+ "categorylogourl ,"
+			+ "categoryorder ,"
+			+ "bgimage ,"
+			+ "color "
+			+ " FROM ka_allvideocategory "
+			+ "WHERE status ='t' AND hasmaincategory=#{mainid}")
+	ArrayList<Category> findAllSubCategory(@Param("mainid") int mainid);
 	
 	@Insert("INSERT INTO ka_allvideocategory("
 			+ "videocategoryid ,"
@@ -38,7 +46,7 @@ public interface MainCategoryRepository {
 			+ "#{bgimage} ,"
 			+ "#{color} ,"
 			+ "#{hasmaincategoryid})")
-	public boolean addNewCategory(Category category);
+	boolean addNewCategory(Category category);
 	
 	
 	@Update("UPDATE ka_allvideocategory SET videocategoryid=#{videocategoryid} ,"
@@ -49,7 +57,6 @@ public interface MainCategoryRepository {
 			+ "color=#{color} ,"
 			+ "status=#{status},hasmaincategoryid=#{hasmaincategoryid}")
 	boolean updateCategory(Category category);
-	
 	
 	
 	@Update("update ka_allvideocategory set status = 'f'WHERE videocategoryid =#{id}")

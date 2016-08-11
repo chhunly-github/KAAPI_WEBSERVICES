@@ -3,39 +3,46 @@ package org.khmeracademy.v3.services.impl;
 import java.util.ArrayList;
 
 import org.khmeracademy.v3.entities.elearning.Category;
-import org.khmeracademy.v3.repository.elearning.MainCategoryRepository;
+import org.khmeracademy.v3.repository.elearning.CategoryRepository;
 import org.khmeracademy.v3.services.elearning.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-	@Autowired
-	private MainCategoryRepository mainCategory;
 
+	@Autowired
+	private CategoryRepository categoryrep;
+	
 	@Override
 	public ArrayList<Category> findAllMainCategory() {
-		return mainCategory.findAllMainCategory();
+		// TODO Auto-generated method stub
+		return categoryrep.findAllMainCategory();
 	}
-
-	/*
-	 * @Override public ArrayList<Category> findSubCategoryByMainCategoryId(int
-	 * mainid) { return mainCategory. }
-	 */
 
 	@Override
 	public boolean deleteCategoryById(int catid) {
-		return mainCategory.deleteCategory(catid);
+		// TODO Auto-generated method stub
+		return categoryrep.deleteCategory(catid);
 	}
 
 	@Override
 	public boolean saveNewCategory(Category category) {
-		return mainCategory.addNewCategory(category);
+		// TODO Auto-generated method stub
+		return categoryrep.addNewCategory(category);
 	}
 
 	@Override
 	public boolean updateCategory(Category category) {
-		return mainCategory.updateCategory(category);
+		// TODO Auto-generated method stub
+		return categoryrep.updateCategory(category);
 	}
+
+	@Override
+	public ArrayList<Category> findAllSubCategory(int mainid) {
+		// TODO Auto-generated method stub
+		return categoryrep.findAllSubCategory(mainid);
+	}
+
 
 }

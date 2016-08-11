@@ -5,9 +5,9 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface deleteSavedListBySaveListIdRepository {
+public interface SavedlistServiceRepository {
 
-	@Delete("DELETE FROM ka_savedlist WHERE savedlistid=#{id}")
-	public boolean deletesavedlistid(@Param("id")int id);
+	@Delete("DELETE FROM ka_savedlist WHERE savedlistid=#{savedlistid}")
+	public boolean deletesavedlistid(@Param("savedlistid") int savedlistid);
 
 }
