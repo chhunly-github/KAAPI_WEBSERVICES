@@ -1,19 +1,24 @@
 package org.khmeracademy.v3.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Department {
 	
-	private String departmentId;
-	private String departmentName;
+	@JsonProperty("DEPARTMENT_ID")
+	private String DepartmentId;
+	@JsonProperty("DEPARTMENT_NAME")
+	private String DepartmentName;
+	
 	public String getDepartmentId() {
-		return departmentId;
+		return DepartmentId;
 	}
 	public void setDepartmentId(String departmentId) {
-		this.departmentId = departmentId;
+		this.DepartmentId = departmentId;
 	}
 	public String getDepartmentName() {
-		return departmentName;
+		return DepartmentName;
 	}
 	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
+		this.DepartmentName = departmentName;
 	}
 }

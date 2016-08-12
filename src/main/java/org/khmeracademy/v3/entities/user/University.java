@@ -1,21 +1,24 @@
 package org.khmeracademy.v3.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class University {
-	
-	private String universityId;
-	private String universityName;
+	@JsonProperty("UNIVERSITY_ID")
+	private String UniversityId;
+	@JsonProperty("UNIVERSITY_NAME")
+	private String UniversityName;
 
 	public String getUniversityName() {
-		return universityName;
+		return UniversityName;
 	}
 	public void setUniversityName(String universityName) {
-		this.universityName = universityName;
+		this.UniversityName = universityName;
 	}
 	public String getUniversityId() {
-		return universityId;
+		return UniversityId;
 	}
 	public void setUniversityId(String universityId) {
-		this.universityId = universityId;
+		this.UniversityId = universityId;
 	}
 	
 
