@@ -10,5 +10,7 @@ public interface VoteService {
 
 	ArrayList<Vote> findVoteByUserId(int uid);
 	ArrayList<Vote> findVoteByVideoId(int vid);
-	
+	boolean saveVoteVideo(Vote vote);
+	int countVoteByVideoId(int vid);
+	int countVoteByUserId(int uid);
 }
