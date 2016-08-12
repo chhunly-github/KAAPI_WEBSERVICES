@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
@@ -94,17 +95,17 @@ public interface CommentRepository {
 	public ArrayList<Comment> findSubComment(int commentid);	
 	
 	
-	@Insert("INSERT INTO ka_videocomment(commenttext, videoid, userid, replycomid) "
-			+ "VALUES(#{commentText}, #{videoId}, #{userId}, #{replyId})")
+	@Insert("INSERT INTO ka_videocomment(commentid,commenttext, videoid, userid, replycomid) "
+			+ "VALUES(#{commentId},#{commentText}, #{videoId}, #{userId}, #{replyId})")
 	public boolean saveComment(Comment comment);
 	
 	
 	@Delete("DELETE FROM ka_videocomment WHERE commentid=#{commentId}")
 	public boolean delete(int commentId);
-
+	
 	
 	@Update("UPDATE ka_videocomment SET commenttext = #{commenttext} WHERE commentid = #{commentid}")
-	public boolean updateComment(String commenttext, int commentid);
+	public boolean updateComment(@Param("commenttext")String commenttext,@Param("commentid") int commentid);
 	
 	
 	

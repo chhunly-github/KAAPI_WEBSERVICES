@@ -28,12 +28,12 @@ public class UserTypeController {
 		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE)
-	public ResponseEntity<Map<String, Object>> deleteUserType(@PathVariable("id") int id){
+	@RequestMapping(value="/{usertypeid}",method=RequestMethod.DELETE)
+	public ResponseEntity<Map<String, Object>> deleteUserType(@PathVariable("usertypeid") int usertypeid){
 		Map<String, Object> map =  new HashMap<>();
 		map.put("STATUS", true);
 		map.put("SUCCESS", "delete success...!!");
-		usertypeimpl.delete(id);
+		usertypeimpl.delete(usertypeid);
 		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
 	}
 	@RequestMapping(method = RequestMethod.POST)
@@ -54,24 +54,24 @@ public class UserTypeController {
 		
 	}
 
-	@RequestMapping(value="/usertype_id",method= RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> findUserTypwById(@PathVariable("id") int id){
+	@RequestMapping(value="/{usertypeid}",method= RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> findUserTypwById(@PathVariable("usertypeid") int usertypeid){
 		Map<String, Object> map = new HashMap<>();
-		map.put("DATA", usertypeimpl.findByid(id));
+		map.put("DATA", usertypeimpl.findByUserTypeId(usertypeid));
 		map.put("STATUS", true);
 		map.put("MESSAGE", "success");
 		return new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
 	}
 
-	@RequestMapping(value="/user_id",method = RequestMethod.GET)
-	public ResponseEntity<Map<String, Object>> finfByUserId(@PathVariable("id") int id){
+	@RequestMapping(value="/user_id/{userid}",method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> finfByUserId(@PathVariable("userid") int userid){
 		Map<String, Object> map = new  HashMap<>();
-		map.put("DATA", usertypeimpl.findByUserId(id));
+		map.put("DATA",usertypeimpl.findByUserId(userid));
 		map.put("STATUS", true);
 		map.put("MESSAGE","success");
 		return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
 	}
-
+	
 }
 
 

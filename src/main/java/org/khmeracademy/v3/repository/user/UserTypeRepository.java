@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.khmeracademy.v3.entities.user.UserType;
@@ -13,8 +14,8 @@ import org.springframework.stereotype.Repository;
 public interface UserTypeRepository {
 
 	
-	@Select("SELECT * FROM ka_usertype WHERE usertypeid=#{id}")
-	UserType findByid(int id);
+	@Select("SELECT * FROM ka_usertype WHERE usertypeid=#{usertypeid}")
+	UserType findByUserTypeid(int usertypeid);
 	
 	@Select("SELECT ut.commentable ,"
 			+ "ut.deleteable ,"
@@ -24,8 +25,8 @@ public interface UserTypeRepository {
 			+ "ut.usertypename ,"
 			+ "ut.viewable "
 			+ "FROM ka_user INNER JOIN "
-			+ "ka_usertype ut ON ut.usertypeid = ka_user.usertypeid")
-	public UserType findByUserId(int id);
+			+ "ka_usertype ut ON ut.usertypeid = ka_user.usertypeid WHERE ka_user.userid=#{userid}")
+	public UserType findByUserId(int userid);
 	
 	@Select("SELECT * FROM ka_usertype ")
 	ArrayList<UserType> findAllUserType();
@@ -45,8 +46,8 @@ public interface UserTypeRepository {
 	
 	
 	
-	@Delete("DELETE FROM ka_usertype WHERE userid=#{id}")
-	public boolean delete(int id);
+	@Delete("DELETE FROM ka_usertype WHERE usertypeid=#{usertypeid}")
+	public boolean delete(@Param("usertypeid")int usertypeid);
 	
 	
 	@Update("UPDATE ka_usertype SET usertypename=#{usertypename},"

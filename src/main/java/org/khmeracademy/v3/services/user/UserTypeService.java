@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface UserTypeService {
-	UserType findByid(int id);
+	UserType findByUserTypeId(int usertypeid);
 	/**
 	 * 
 	 * @return
 	 */
-	 UserType findByUserId( int id);
+	 UserType findByUserId( int userid);
 	/**
 	 * 
 	 * @return
@@ -38,4 +38,5 @@ public interface UserTypeService {
 	 * @return
 	 */
 	boolean updateUserType(UserType usertype);
+	
 }

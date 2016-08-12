@@ -14,14 +14,15 @@ public class UserTypeImpl implements UserTypeService{
 	
 	@Autowired
 	private UserTypeRepository usertypeRepository;
+
 	@Override
-	public UserType findByid(int id) {
-		return usertypeRepository.findByid(id);
+	public UserType findByUserTypeId(int usertypeid) {
+		return usertypeRepository.findByUserTypeid(usertypeid);
 	}
 
 	@Override
-	public UserType findByUserId(int id) {
-		return usertypeRepository.findByUserId(id);
+	public UserType findByUserId(int userid) {
+		return usertypeRepository.findByUserId(userid);
 	}
 
 	@Override
@@ -35,15 +36,15 @@ public class UserTypeImpl implements UserTypeService{
 	}
 
 	@Override
-	public boolean delete(int id) {
-		return usertypeRepository.delete(id);
+	public boolean delete(int usertypeid) {
+		return usertypeRepository.delete(usertypeid);
 	}
 
 	@Override
 	public boolean updateUserType(UserType usertype) {
 		return usertypeRepository.updateUserType(usertype);
 	}
-
+	
 	
 	
 

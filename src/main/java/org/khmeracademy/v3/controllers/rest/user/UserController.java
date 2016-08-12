@@ -32,6 +32,18 @@ public class UserController {
 
 	}
 	
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>> getUserInfoByUserId(@PathVariable("id") int id){
+		Map<String, Object> map = new HashMap<>();
+		map.put("DATA", userService.findByUserId(id));
+		if(map.get("DATA")!=null){
+			map.put("MESSAGE", "SUCCESS");
+		}else{
+			map.put("MESSAGE", "FAILED");
+		}
+		return new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+	}
+	
 	@RequestMapping(value="/{id}", method= RequestMethod.DELETE )
 	public ResponseEntity<Map<String,Object>> deleteUserByUserId(@PathVariable("id") int id){
 		

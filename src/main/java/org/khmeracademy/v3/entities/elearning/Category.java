@@ -20,6 +20,8 @@ public class Category {
 	private String color;
 	@JsonProperty("HAS_MAIN_CATEGORY")
 	private int hasmaincategoryid;
+	@JsonProperty("STATUS")
+	private boolean status;
 	
 	List<Category> subCategory;
 	List<Category> subOfSubCategory;
@@ -77,6 +79,12 @@ public class Category {
 	}
 	public void setSubOfSubCategory(List<Category> subOfSubCategory) {
 		this.subOfSubCategory = subOfSubCategory;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 }

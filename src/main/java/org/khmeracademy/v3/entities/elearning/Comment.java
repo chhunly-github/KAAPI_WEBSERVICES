@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Comment {
 	
 	@JsonProperty("COMMENT_ID")
-	private String commentId;
+	private int commentId;
 	
 	@JsonProperty("COMMENT_DATE")
 	private Date commentDate;
@@ -16,10 +16,10 @@ public class Comment {
 	private String commentText;
 	
 	@JsonProperty("VIDEO_ID")
-	private String videoId;
+	private int videoId;
 	
 	@JsonProperty("USER_ID")
-	private String userId;
+	private int userId;
 	
 	@JsonProperty("VIDEO_NAME")
 	private String videoName;
@@ -31,14 +31,14 @@ public class Comment {
 	private String userImageUrl;
 	
 	@JsonProperty("REPLY_ID")
-	private String replyId;
+	private int replyId;
 	
 	
 	
-	public String getCommentId() {
+	public int  getCommentId() {
 		return commentId;
 	}
-	public void setCommentId(String commentId) {
+	public void setCommentId(int commentId) {
 		this.commentId = commentId;
 	}
 	public Date getCommentDate() {
@@ -53,16 +53,16 @@ public class Comment {
 	public void setCommentText(String commentText) {
 		this.commentText = commentText;
 	}
-	public String getVideoId() {
+	public int getVideoId() {
 		return videoId;
 	}
-	public void setVideoId(String videoId) {
+	public void setVideoId(int videoId) {
 		this.videoId = videoId;
 	}
-	public String getUserId() {
+	public int getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
 	public String getVideoName() {
@@ -83,10 +83,10 @@ public class Comment {
 	public void setUserImageUrl(String userImageUrl) {
 		this.userImageUrl = userImageUrl;
 	}
-	public String getReplyId() {
+	public int getReplyId() {
 		return replyId;
 	}
-	public void setReplyId(String replyId) {
+	public void setReplyId(int replyId) {
 		this.replyId = replyId;
 	}
 	

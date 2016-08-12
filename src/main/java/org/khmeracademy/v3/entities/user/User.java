@@ -10,275 +10,157 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class User {
 	@JsonProperty("USER_ID")
-	private String userId;
+	private int userid;
+
 	@JsonProperty("EMAIL")
 	private String email;
+
 	@JsonProperty("PASSWORD")
 	private String password;
+
 	@JsonProperty("USERNAME")
 	private String username;
+
 	@JsonProperty("GENDER")
 	private String gender;
+
 	@JsonProperty("DATE_OF_BIRTH")
-	private Date dateOfBirth;
+	private Date dateofbirth;
+
 	@JsonProperty("PHONE_NUMBER")
-	private String phoneNumber;
+	private String phonenumber;
+
 	@JsonProperty("REGISTER_DATE")
-	private Date registerDate;
+	private Date registerdate;
+
 	@JsonProperty("USER_IMAGE_URL")
-	private String userImageUrl;
+	private String userimageurl;
+
 	@JsonProperty("USERTYPE_ID")
-	private String userTypeId;
-	@JsonProperty("USER_TYPENAME")
-	private String userTypeName;
-	@JsonProperty("COUNT_VIDEOS")
-	private int countVideos;
-	@JsonProperty("COUNT_VOTE_PLUS")
-	private int countVotePlus;
-	@JsonProperty("COUNT_VOTE_MINUS")
-	private int countVoteMinus;
-	@JsonProperty("COUNT_COMMENTS")
-	private int countComments;
-	@JsonProperty("COUNT_PLAYLISTS")
-	private int countPlaylists;
-	@JsonProperty("VIEWABLE")
-	private boolean viewable;
-	@JsonProperty("COMMENTABLE")
-	private boolean commentable;
-	@JsonProperty("POSTABLE")
-	private boolean postable;
-	@JsonProperty("DELETEABLE")
-	private boolean deleteable;
-	@JsonProperty("USERABLE")
-	private boolean userable;
-	@JsonProperty("COVER_PHOTO")
-	private String coverphoto;
-//	private String school;
-	@JsonProperty("UNIVERSITY_ID")
-	private String universityId;
-	@JsonProperty("DEPARTMENT_ID")
-	private String departmentId;
-	@JsonProperty("UNIVERSITY_NAME")
-	private String universityName;
-	@JsonProperty("DEPARTMENT_NAME")
-	private String departmentName;
+	private int usertypeid;
+
 	@JsonProperty("POINT")
 	private int point;
+
+	@JsonProperty("UNIVERSITY_ID")
+	private int universityid;
+
+	@JsonProperty("DEPARTMENT_ID")
+	private int departmentid;
+
 	@JsonProperty("USER_STATUS")
-	private int userStatus;
-	@JsonProperty("IS_COMFIRMED")
-	private boolean isConfirmed;
-	@JsonProperty("SOCIAL_ID")
-	private String socialId;
-	@JsonProperty("ORIGINAL_ID")
-	private int originalID;
-	@JsonProperty("START_DATE")
-	private String startDate;
-	@JsonProperty("UNTIL_DATE")
-	private String untilDate;
-	 
-	public String getStartDate() {
-		return startDate;
+	private int userstatus;
+
+	public int getUserid() {
+		return userid;
 	}
-	public void setStartDate(String startDate) {
-		this.startDate = startDate;
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
-	public String getUntilDate() {
-		return untilDate;
-	}
-	public void setUntilDate(String untilDate) {
-		this.untilDate = untilDate;
-	}
-	
-	public int getOriginalID() {
-		return originalID;
-	}
-	public void setOriginalID(int originalID) {
-		this.originalID = originalID;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getUsername() {
 		return username;
 	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}
+
 	public String getGender() {
 		return gender;
 	}
+
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
+
+	public Date getDateofbirth() {
+		return dateofbirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+
+	public void setDateofbirth(Date dateofbirth) {
+		this.dateofbirth = dateofbirth;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
+
+	public String getPhonenumber() {
+		return phonenumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
-	public Date getRegisterDate() {
-		return registerDate;
+
+	public Date getRegisterdate() {
+		return registerdate;
 	}
-	public void setRegisterDate(Date registerDate) {
-		this.registerDate = registerDate;
+
+	public void setRegisterdate(Date registerdate) {
+		this.registerdate = registerdate;
 	}
-	public String getUserImageUrl() {
-		return userImageUrl;
+
+	public String getUserimageurl() {
+		return userimageurl;
 	}
-	public void setUserImageUrl(String userImageUrl) {
-		this.userImageUrl = userImageUrl;
+
+	public void setUserimageurl(String userimageurl) {
+		this.userimageurl = userimageurl;
 	}
-	public String getUserTypeId() {
-		return userTypeId;
+
+	public int getUsertypeid() {
+		return usertypeid;
 	}
-	public void setUserTypeId(String userTypeId) {
-		this.userTypeId = userTypeId;
+
+	public void setUsertypeid(int usertypeid) {
+		this.usertypeid = usertypeid;
 	}
-	public String getUserTypeName() {
-		return userTypeName;
-	}
-	public void setUserTypeName(String userTypeName) {
-		this.userTypeName = userTypeName;
-	}
-	public int getCountVideos() {
-		return countVideos;
-	}
-	public void setCountVideos(int countVideos) {
-		this.countVideos = countVideos;
-	}
-	public int getCountVotePlus() {
-		return countVotePlus;
-	}
-	public void setCountVotePlus(int countVotePlus) {
-		this.countVotePlus = countVotePlus;
-	}
-	public int getCountVoteMinus() {
-		return countVoteMinus;
-	}
-	public void setCountVoteMinus(int countVoteMinus) {
-		this.countVoteMinus = countVoteMinus;
-	}
-	public int getCountComments() {
-		return countComments;
-	}
-	public void setCountComments(int countComments) {
-		this.countComments = countComments;
-	}
-	public int getCountPlaylists() {
-		return countPlaylists;
-	}
-	public void setCountPlaylists(int countPlaylists) {
-		this.countPlaylists = countPlaylists;
-	}
-	public boolean isViewable() {
-		return viewable;
-	}
-	public void setViewable(boolean viewable) {
-		this.viewable = viewable;
-	}
-	public boolean isCommentable() {
-		return commentable;
-	}
-	public void setCommentable(boolean commentable) {
-		this.commentable = commentable;
-	}
-	public boolean isPostable() {
-		return postable;
-	}
-	public void setPostable(boolean postable) {
-		this.postable = postable;
-	}
-	public boolean isDeleteable() {
-		return deleteable;
-	}
-	public void setDeleteable(boolean deleteable) {
-		this.deleteable = deleteable;
-	}
-	public boolean isUserable() {
-		return userable;
-	}
-	public void setUserable(boolean userable) {
-		this.userable = userable;
-	}
-	public String getCoverphoto() {
-		return coverphoto;
-	}
-	public void setCoverphoto(String coverphoto) {
-		this.coverphoto = coverphoto;
-	}
-	public String getUniversityId() {
-		return universityId;
-	}
-	public void setUniversityId(String universityId) {
-		this.universityId = universityId;
-	}
-	public String getDepartmentId() {
-		return departmentId;
-	}
-	public void setDepartmentId(String departmentId) {
-		this.departmentId = departmentId;
-	}
-	public String getUniversityName() {
-		return universityName;
-	}
-	public void setUniversityName(String universityName) {
-		this.universityName = universityName;
-	}
-	public String getDepartmentName() {
-		return departmentName;
-	}
-	public void setDepartmentName(String departmentName) {
-		this.departmentName = departmentName;
-	}
+
 	public int getPoint() {
 		return point;
 	}
+
 	public void setPoint(int point) {
 		this.point = point;
 	}
-	
-	public boolean isConfirmed() {
-		return isConfirmed;
+
+	public int getUniversityid() {
+		return universityid;
 	}
-	public void setConfirmed(boolean isConfirmed) {
-		this.isConfirmed = isConfirmed;
+
+	public void setUniversityid(int universityid) {
+		this.universityid = universityid;
 	}
-	public String getSocialId() {
-		return socialId;
+
+	public int getDepartmentid() {
+		return departmentid;
 	}
-	public void setSocialId(String socialId) {
-		this.socialId = socialId;
+
+	public void setDepartmentid(int departmentid) {
+		this.departmentid = departmentid;
 	}
-	public int getUserStatus() {
-		return userStatus;
+
+	public int getUserstatus() {
+		return userstatus;
 	}
-	public void setUserStatus(int userStatus) {
-		this.userStatus = userStatus;
+
+	public void setUserstatus(int userstatus) {
+		this.userstatus = userstatus;
 	}
-	
-	
-	
-	
+
 }

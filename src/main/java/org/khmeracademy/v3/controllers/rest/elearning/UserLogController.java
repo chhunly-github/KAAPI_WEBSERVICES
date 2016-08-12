@@ -21,7 +21,7 @@ public class UserLogController {
 	@Autowired
 	private UserLogService userLogService;
 	
-	@RequestMapping(value="/userlogId{userid}", method=RequestMethod.GET)
+	@RequestMapping(value="/userlogId/{userid}", method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> findAllUserLog(@PathVariable("userid") int userid){
 		Map<String, Object> map= new HashMap<>();
 		map.put("DATA", userLogService.findAllUserLog(userid));

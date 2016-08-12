@@ -28,7 +28,7 @@ public interface UserRepository {
 			+ "universityid, "
 			+ "departmentid  "
 			+ "FROM ka_user "
-			+ "WHERE username=#{username} AND password=#{password} AND userstatus=1")
+			+ "WHERE username=#{username} AND password=#{password} AND userstatus='1' ")
 	User findByUserNameAndPassword(@Param("username") String username, @Param("password") String password);
 
 	@Select("SELECT userid, "
@@ -44,7 +44,7 @@ public interface UserRepository {
 			+ "universityid, "
 			+ "departmentid  "
 			+ "FROM ka_user "
-			+ "WHERE userid=#{userid} AND userstatus=1")
+			+ "WHERE userid=#{userid}")
 	public User findByUserId(@Param("userid") int userid);
 	
 	@Select("SELECT "
@@ -60,37 +60,14 @@ public interface UserRepository {
 			+ "point, "
 			+ "universityid, "
 			+"departmentid "
-			+ " FROM ka_user WHERE userstatus=1")
+			+ " FROM ka_user")
 	ArrayList<User> findAllUser();
 	
-	@Insert("INSERT INTO ka_user("
-			+ "email, "
-			+ "password, "
-			+ "username, "
-			+ "gender, "
-			+ "dateofbirth, "
-			+ "phonenumber, "
-			+ "registerdate, "
-			+ "userimageurl, "
-			+ "usertypeid, "
-			+ "point ,"
-			+ "universityid, "
-			+ "departmentid, "
-			+ "userstatus)  "
-			+ "VALUES("
-			+ "#{email},"
-			+ "#{password},"
-			+ "#{username},"
-			+ "#{gender},"
-			+ "#{dateofbirth},"
-			+ "#{phonenumber},"
-			+ "#{registerdate},"
-			+ "#{userimageurl},"
-			+ "#{usertypeid},"
-			+ "#{point},"
-			+ "#{universityid},"
-			+ "#{departmentid},"
-			+ "1)")
+	@Insert("INSERT INTO ka_user(userid ,email ,password ,username ,gender , "
+			+ "dateofbirth ,phonenumber ,registerdate ,userimageurl ,usertypeid ,"
+			+ "point ,universityid ,departmentid ) VALUES(#{userid},#{email},#{password},#{username},#{gender},"
+			+ "#{dateofbirth},#{phonenumber},"+ "#{registerdate},#{userimageurl},"
+			+ "#{usertypeid},#{point},#{universityid},#{departmentid})")
 	boolean insert(User user);
 
 	@Delete("DELETE FROM ka_user WHERE userid=#{id}")
