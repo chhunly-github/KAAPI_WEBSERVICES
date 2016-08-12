@@ -26,6 +26,23 @@ public class VoteServiceImpl implements VoteService{
 		return voteRepository.findVoteByVideoId(vid);
 	}
 
+	@Override
+	public boolean saveVoteVideo(Vote vote) {
+		// TODO Auto-generated method stub
+		return voteRepository.saveVoteVideo(vote);
+	}
+
+	@Override
+	public int countVoteByVideoId(int vid) {
+		return voteRepository.countVoteByVideoId(vid);
+	}
+
+	@Override
+	public int countVoteByUserId(int uid) {
+		// TODO Auto-generated method stub
+		return voteRepository.countVoteByUserID(uid);
+	}
+
 
 	
 }
