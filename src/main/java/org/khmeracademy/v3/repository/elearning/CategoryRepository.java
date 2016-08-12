@@ -24,6 +24,7 @@ public interface CategoryRepository {
 			+ "hasmaincategoryid FROM ka_allvideocategory  "
 			+ "WHERE status ='t' and hasmaincategoryid is null ORDER BY categoryorder")
 	@Results(value={
+			@Result(property="videocategoryid", column="videocategoryid"),
 			@Result(property="subCategory" , column="videocategoryid" , 
 					many = @Many(select = "findAllSubCategory")),
 	})
@@ -38,6 +39,7 @@ public interface CategoryRepository {
 			+ " FROM ka_allvideocategory "
 			+ "WHERE status ='t' AND hasmaincategoryid=#{videocategoryid} ORDER BY categoryname")
 	@Results(value={
+			@Result(property="videocategoryid", column="videocategoryid"),
 			@Result(property="subOfSubCategory" , column="videocategoryid" , 
 					many = @Many(select = "findAllSubCategory"))
 	})

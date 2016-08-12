@@ -1,5 +1,7 @@
 package org.khmeracademy.v3.entities.elearning;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*import org.kaapi.app.forms.RecommendedVideos;*/
@@ -28,8 +30,17 @@ public class Playlist {
 	private boolean status;
 	@JsonProperty("DURATION")
 	private double duration;
+	@JsonProperty("VIDEOS")
+	private List<Video> videos;
 	
 	
+	
+	public List<Video> getVideos() {
+		return videos;
+	}
+	public void setVideos(List<Video> videos) {
+		this.videos = videos;
+	}
 	public int getPlaylistid() {
 		return playlistid;
 	}

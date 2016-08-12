@@ -35,4 +35,9 @@ public class playlistServiceImpl implements playlistService {
 		return playlistRepoitory.findAllVideoByPlayListId(id);
 	}
 
+	@Override
+	public ArrayList<Playlist> findAllVideoByMainCategoryID(int catId) {
+		return playlistRepoitory.findAllVideoByMainCategoryID(catId);
+	}
+
 }
