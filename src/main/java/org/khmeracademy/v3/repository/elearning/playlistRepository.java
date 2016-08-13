@@ -39,6 +39,7 @@ public interface playlistRepository {
 	@Select("SELECT playlistid, playlistname, description, thumbnailurl, maincategory, bgimage, duration "
 			+ "FROM ka_playlist WHERE maincategory =#{catId} ")
 	@Results(value={
+			@Result(property="playlistid", column="playlistid"),
 			@Result(property="videos" , column="playlistid" , 
 					many = @Many(select = "findAllVideoByPlayListId")),
 	})
