@@ -12,6 +12,10 @@ public class Log {
 	private String userid;
 	@JsonProperty("VIDEO_ID")
 	private String videoid;
+	@JsonProperty("VIDEO_NAME")
+	private String videoname;
+	@JsonProperty("VIDEO_THUMBNAIL")
+	private String youtubeurl;
 	@JsonProperty("START_TIME")
 	private Date starttime;
 	@JsonProperty("STOP_TIME")

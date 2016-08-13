@@ -1,6 +1,7 @@
 package org.khmeracademy.v3.entities.user;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -51,8 +52,19 @@ public class User {
 	@JsonProperty("USER_STATUS")
 	private int userstatus;
 
+	@JsonProperty("STUDIED_COURSE")
+	private ArrayList<StudiedCourse> studiedcourse;
+	
 	public int getUserid() {
 		return userid;
+	}
+
+	public ArrayList<StudiedCourse> getStudiedcourse() {
+		return studiedcourse;
+	}
+
+	public void setStudiedcourse(ArrayList<StudiedCourse> studiedcourse) {
+		this.studiedcourse = studiedcourse;
 	}
 
 	public void setUserid(int userid) {

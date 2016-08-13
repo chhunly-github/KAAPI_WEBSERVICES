@@ -19,7 +19,8 @@ public interface SavedlistServiceRepository {
 			+ "playlistid, "
 			+ "videoid, "
 			+ "savedlistname, "
-			+ "thumbnail "
+			+ "thumbnail, "
+			+ "createddate "
 			+ "FROM ka_savedlist "
 			+ "WHERE userid=#{userid}")
 	ArrayList<SavedList> findAllByUserId(@Param("userid") int userid);

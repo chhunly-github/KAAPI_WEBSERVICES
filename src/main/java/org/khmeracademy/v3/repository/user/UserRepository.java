@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.khmeracademy.v3.entities.user.StudiedCourse;
 import org.khmeracademy.v3.entities.user.User;
 import org.springframework.stereotype.Repository;
 
@@ -26,26 +30,39 @@ public interface UserRepository {
 			+ "usertypeid, "
 			+ "point, "
 			+ "universityid, "
-			+ "departmentid  "
-			+ "FROM ka_user "
+			+ "departmentid "
+			+ "FROM ka_user  "
 			+ "WHERE username=#{username} AND password=#{password} AND userstatus='1' ")
 	User findByUserNameAndPassword(@Param("username") String username, @Param("password") String password);
 
-	@Select("SELECT userid, "
-			+ "email, " 
-			+ "username, "
-			+ "gender, "
-			+ "dateofbirth, "
-			+ "phonenumber, "
-			+ "registerdate, "
-			+ "userimageurl, "
-			+ "usertypeid, "
-			+ "point, "
-			+ "universityid, "
+	@Select("SELECT userid,   "
+			+ "email,  "
+			+ "username,  "
+			+ "gender,  "
+			+ "dateofbirth,  "
+			+ "phonenumber,  "
+			+ "registerdate,  "
+			+ "userimageurl,  "
+			+ "usertypeid,  "
+			+ "point,  "
+			+ "universityid,  "
 			+ "departmentid  "
-			+ "FROM ka_user "
-			+ "WHERE userid=#{userid}")
+			+ "FROM ka_user  "
+			+ "WHERE userid=#{userid} ")
+	@Results(value={
+			@Result(property="userid", column="userid"),
+			@Result(property="studiedcourse" , column="userid" , 
+					many = @Many(select = "findStudiedCourseByUserId")),
+	})
 	public User findByUserId(@Param("userid") int userid);
+	
+	@Select("SELECT "
+			+ "sc.playlistid, " 
+			+ "sc.startdate, "
+			+ "p.playlistname "
+			+ "FROM ka_studied_course sc INNER JOIN ka_playlist p ON p.playlistid=sc.playlistid "
+			+ "WHERE sc.userid=#{userid} ")
+	ArrayList<StudiedCourse> findStudiedCourseByUserId(@Param("userid") int userid);
 	
 	@Select("SELECT "
 			+ "userid, "

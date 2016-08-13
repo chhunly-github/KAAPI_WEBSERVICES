@@ -1,13 +1,32 @@
 package org.khmeracademy.v3.entities.elearning;
 
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class SavedList {
 
+	@JsonProperty("SAVEDLIST_ID")
 	private int savedlistid;
+	@JsonProperty("PLAYLIST_ID")
 	private int playlistid;
+	@JsonProperty("USER_ID")
 	private int userid;
+	@JsonProperty("VIDEO_ID")
 	private int videoid;
+	@JsonProperty("SAVEDLIST_NAME")
 	private String savedlistname;
+	@JsonProperty("THUMBNAIL")
 	private String thumbnail;
+	@JsonProperty("CREATED_DATE")
+	private Date createddate;
+	
+	public Date getCreateddate() {
+		return createddate;
+	}
+	public void setCreateddate(Date createddate) {
+		this.createddate = createddate;
+	}
 	public int getSavedlistid() {
 		return savedlistid;
 	}

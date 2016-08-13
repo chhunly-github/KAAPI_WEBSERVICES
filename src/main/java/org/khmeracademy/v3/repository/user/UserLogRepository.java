@@ -1,4 +1,4 @@
-package org.khmeracademy.v3.repository;
+package org.khmeracademy.v3.repository.user;
 
 import java.util.ArrayList;
 
@@ -8,6 +8,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserLogRepository {
-	@Select("SELECT * FROM ka_log WHERE userid=#{userid}")
+	@Select("SELECT l.logid, "
+			+ "l.videoid, "
+			+ "v.videoname, "
+			+ "v.youtubeurl, "
+			+ "l.starttime, "
+			+ "l.stoptime "
+			+ "FROM ka_log l INNER JOIN ka_video v ON v.videoid=l.videoid "
+			+ "WHERE l.userid=#{userid}")
 	public ArrayList<Log> findAllUserLogId( int userid);
 }
+	
