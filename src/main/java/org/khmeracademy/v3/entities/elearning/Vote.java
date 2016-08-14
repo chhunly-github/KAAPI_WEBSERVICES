@@ -7,7 +7,7 @@ public class Vote {
 	private int userid;
 	@JsonProperty("VIDEO_ID")
 	private int videoid;
-	@JsonProperty("VIDEO_TYPE")
+	@JsonProperty("VOTE_TYPE")
 	private int votetype;
 	
 	public int getUserid() {

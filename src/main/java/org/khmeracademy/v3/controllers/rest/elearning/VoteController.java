@@ -20,7 +20,7 @@ public class VoteController {
 	private VoteService voteSerice;
 	
 	
-	@RequestMapping(value="/countbyvideoid{vid}" ,method=RequestMethod.GET)
+	@RequestMapping(value="/countbyvideoid/{vid}" ,method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> countVoteByVideoId(@PathVariable("vid") int vid){
 		Map<String, Object> map= new HashMap<>();
 		map.put("DATA", voteSerice.countVoteByVideoId(vid));
@@ -37,7 +37,7 @@ public class VoteController {
 	};	
 	
 	
-	@RequestMapping(value="/countbyuserid{vid}" ,method=RequestMethod.GET)
+	@RequestMapping(value="/countbyuserid/{vid}" ,method=RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>> countVoteByUserId(@PathVariable("uid") int uid){
 		Map<String, Object> map= new HashMap<>();
 		map.put("DATA", voteSerice.countVoteByUserId(uid));
@@ -54,7 +54,7 @@ public class VoteController {
 	};	
 	
 	
-	@RequestMapping(value="/save{vid}" ,method=RequestMethod.PATCH)
+	@RequestMapping(value="/save{vid}" ,method=RequestMethod.POST)
 	public ResponseEntity<Map<String, Object>> saveVoteVideo(@RequestBody Vote vote){
 		Map<String, Object> map= new HashMap<>();
 		map.put("DATA",voteSerice.saveVoteVideo(vote));

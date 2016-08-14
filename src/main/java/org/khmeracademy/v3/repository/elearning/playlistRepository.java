@@ -16,6 +16,11 @@ import org.springframework.stereotype.Repository;
 public interface playlistRepository {
 
 	@Select("SELECT * FROM ka_playlist WHERE playlistid=#{id}")
+	@Results(value={
+			@Result(property="playlistid", column="playlistid"),
+			@Result(property="videos" , column="playlistid" , 
+					many = @Many(select = "findAllVideoByPlayListId")),
+	})
 	public Playlist getById(int id);
 	
 	
