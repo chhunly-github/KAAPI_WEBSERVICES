@@ -35,7 +35,7 @@ public interface UserService {
 	 * @param id
 	 * @return
 	 */
-	boolean deleteUserByUserId(int id);
+	boolean deleteUserByUserId(int id ,int userstatus);
 	/**
 	 * 
 	 * @param user

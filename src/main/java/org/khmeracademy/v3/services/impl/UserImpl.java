@@ -16,27 +16,7 @@ public class UserImpl implements UserService {
 
 	@Override
 	public User findByUserNameAndPassword(String username, String password) {
-		return userRepository.findByUserNameAndPassword(username, password);	
-		}
-
-	@Override
-	public ArrayList<User> findAllUser() {
-			return userRepository.findAllUser();
-	}
-
-	@Override
-	public boolean Save(User user) {
-		return userRepository.insert(user);
-	}
-
-	@Override
-	public boolean deleteUserByUserId(int id) {
-		return userRepository.deleteByAdmin(id);
-	}
-
-	@Override
-	public boolean updateUserInfoById(User user) {
-		return userRepository.updateUserInfoById(user);
+		return userRepository.findByUserNameAndPassword(username, password);
 	}
 
 	@Override
@@ -45,9 +25,23 @@ public class UserImpl implements UserService {
 	}
 
 	@Override
-	public boolean updateUserPassword(String username, String newpassword, String oldpassword) {
-		
-		return userRepository.updateUserPassword(username, newpassword, oldpassword);
+	public ArrayList<User> findAllUser() {
+		return userRepository.findAllUser();
+	}
+
+	@Override
+	public boolean Save(User user) {
+		return userRepository.insert(user);
+	}
+
+	@Override
+	public boolean deleteUserByUserId(int id, int userstatus) {
+		return userRepository.deleteByAdmin(id, userstatus);
+	}
+
+	@Override
+	public boolean updateUserInfoById(User user) {
+		return userRepository.updateUserInfoById(user);
 	}
 
 	@Override
@@ -61,8 +55,12 @@ public class UserImpl implements UserService {
 	}
 
 	@Override
+	public boolean updateUserPassword(String username, String newpassword, String oldpassword) {
+		return userRepository.updateUserPassword(username, newpassword, oldpassword);
+	}
+
+	@Override
 	public boolean updatePointByUsername(int point, String username) {
 		return userRepository.updateUserPointByUsername(point, username);
 	}
-	
 }

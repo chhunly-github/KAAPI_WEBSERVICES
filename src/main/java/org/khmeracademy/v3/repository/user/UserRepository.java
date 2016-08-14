@@ -32,7 +32,7 @@ public interface UserRepository {
 			+ "universityid, "
 			+ "departmentid "
 			+ "FROM ka_user  "
-			+ "WHERE username=#{username} AND password=#{password} AND userstatus='1' ")
+			+ "WHERE username=#{username} AND password=#{password}  ")
 	User findByUserNameAndPassword(@Param("username") String username, @Param("password") String password);
 
 	@Select("SELECT userid,   "
@@ -82,13 +82,15 @@ public interface UserRepository {
 	
 	@Insert("INSERT INTO ka_user(userid ,email ,password ,username ,gender , "
 			+ "dateofbirth ,phonenumber ,registerdate ,userimageurl ,usertypeid ,"
-			+ "point ,universityid ,departmentid ) VALUES(#{userid},#{email},#{password},#{username},#{gender},"
-			+ "#{dateofbirth},#{phonenumber},"+ "#{registerdate},#{userimageurl},"
+			+ "point ,universityid ,departmentid ) VALUES(#{userid},#{email},#{password},"
+			+ "#{username},#{gender},"
+			+ "#{dateofbirth},#{phonenumber},"
+			+ "#{registerdate},#{userimageurl},"
 			+ "#{usertypeid},#{point},#{universityid},#{departmentid})")
 	boolean insert(User user);
 
-	@Delete("DELETE FROM ka_user WHERE userid=#{id}")
-	boolean deleteByAdmin(@Param("id")int id);
+	@Delete("UPDATE ka_user SET userstatus=#{userstatus} WHERE userid=#{id}")
+	boolean deleteByAdmin(@Param("id")int id ,@Param("userstatus")int userstatus);
 	
 	@Delete("DELETE FROM ka_user "
 			+ "WHERE username=#{username} AND password=#{password}")

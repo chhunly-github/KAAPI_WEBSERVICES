@@ -175,4 +175,14 @@ public class User {
 		this.userstatus = userstatus;
 	}
 
+	@Override
+	public String toString() {
+		return "User [userid=" + userid + ", email=" + email + ", password=" + password + ", username=" + username
+				+ ", gender=" + gender + ", dateofbirth=" + dateofbirth + ", phonenumber=" + phonenumber
+				+ ", registerdate=" + registerdate + ", userimageurl=" + userimageurl + ", usertypeid=" + usertypeid
+				+ ", point=" + point + ", universityid=" + universityid + ", departmentid=" + departmentid
+				+ ", userstatus=" + userstatus + ", studiedcourse=" + studiedcourse + "]";
+	}
+
+	
 }
